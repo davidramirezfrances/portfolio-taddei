@@ -38,6 +38,20 @@
 .next-link:hover{background:var(--white);}
 .back-home{font-family:var(--font-mono);font-size:9px;letter-spacing:.2em;color:var(--muted);text-decoration:none;text-transform:uppercase;border-bottom:1px solid var(--gray-mid);padding-bottom:2px;transition:color .3s,border-color .3s;}
 .back-home:hover{color:var(--gold);border-color:var(--gold);}
+
+@media(max-width:768px){
+  .gallery-section{padding:40px 0;}
+  .gallery-grid{display:flex;flex-direction:row;overflow-x:scroll;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;gap:3px;scrollbar-width:none;}
+  .gallery-grid::-webkit-scrollbar{display:none;}
+  .gallery-item{flex-shrink:0;width:88vw;scroll-snap-align:center;}
+  .gallery-img{width:100%;aspect-ratio:3/4;height:auto;object-fit:cover;}
+  .gallery-grid video{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;}
+  .details-section{grid-template-columns:1fr;gap:48px;padding:48px 24px;}
+  .next-section{flex-direction:column;align-items:flex-start;gap:24px;padding:48px 24px;}
+  .proj-hero{padding:80px 24px 48px;flex-direction:column;align-items:flex-start;min-height:auto;gap:0;}
+  .proj-back{position:relative;top:auto;left:auto;margin-bottom:24px;}
+  .proj-year{position:relative;bottom:auto;right:auto;margin-top:24px;}
+}
 </style>
 </head>
 <body>

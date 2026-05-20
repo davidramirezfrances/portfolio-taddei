@@ -10,7 +10,7 @@
 #hero{min-height:100vh;display:flex;align-items:center;padding:0 64px;position:relative;overflow:hidden;}
 .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 80% at 75% 50%, rgba(201,169,110,.09) 0%, transparent 65%),radial-gradient(ellipse 40% 50% at 30% 50%, rgba(201,169,110,.04) 0%, transparent 60%);}
 .hero-model-placeholder{position:absolute;right:-8%;top:50%;transform:translateY(-50%);width:68%;height:110%;display:flex;align-items:center;justify-content:center;pointer-events:none;}
-.hero-model-img{width:100%;height:100%;object-fit:contain;object-position:center;display:block;filter:drop-shadow(0 0 120px rgba(201,169,110,.14)) drop-shadow(0 0 40px rgba(201,169,110,.08));animation:heroFloat 6s ease-in-out infinite;}
+.hero-model-img{width:100%;height:100%;object-fit:contain;object-position:center;display:block;filter:drop-shadow(0 0 120px rgba(201,169,110,.14)) drop-shadow(0 0 40px rgba(201,169,110,.08));}
 .hero-content{position:relative;z-index:2;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;max-width:42%;gap:0;}
 .hero-title-block{margin-bottom:28px;}
 .hero-eyebrow{font-family:var(--font-mono);font-size:10px;letter-spacing:.3em;color:var(--gold);text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;gap:10px;opacity:0;animation:fadeUp .8s .3s forwards;}
@@ -46,7 +46,7 @@
 
 /* Jewelry cards */
 .jewelry-grid{padding:0 48px;display:grid;grid-template-columns:repeat(3,1fr);gap:3px;}
-.jewelry-card{position:relative;background:var(--gray);overflow:hidden;cursor:none;}
+.jewelry-card{position:relative;background:var(--black);overflow:hidden;cursor:none;}
 .jewelry-card-inner{position:relative;aspect-ratio:3/4;overflow:hidden;}
 .carousel{position:relative;width:100%;height:100%;}
 .carousel-slides{display:flex;width:100%;height:100%;transition:transform .7s var(--ease);}
@@ -76,8 +76,7 @@
 .jinfo-tag{font-family:var(--font-mono);font-size:9px;letter-spacing:.12em;color:var(--muted);text-transform:uppercase;border:1px solid var(--gray-mid);padding:2px 8px;}
 .jinfo-title{font-family:var(--font-display);font-size:22px;letter-spacing:.03em;line-height:1.1;margin-bottom:6px;}
 .jinfo-desc{font-size:12px;color:var(--muted);line-height:1.7;}
-.jinfo-link{display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-family:var(--font-mono);font-size:9px;letter-spacing:.15em;color:var(--muted);text-decoration:none;text-transform:uppercase;transition:color .3s;}
-.jinfo-link:hover{color:var(--gold);}
+.jewelry-info .btn-primary{margin-top:24px;}
 
 /* Client cards */
 .client-list{padding:0 48px;display:flex;flex-direction:column;gap:3px;}
@@ -106,19 +105,20 @@
 
 /* Personal masonry */
 .ver-mas-row{display:flex;justify-content:center;padding:40px 48px 0;}
-.masonry-grid{padding:0 48px;display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:220px;gap:3px;align-items:stretch;}
+.masonry-grid{padding:0 48px;display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:280px;gap:3px;align-items:stretch;}
 .m-card{position:relative;overflow:hidden;cursor:none;display:flex;align-items:center;justify-content:center;min-height:220px;}
 .m-wide{grid-column:span 2;}
 .m-tall{grid-row:span 2;align-self:stretch;height:100%;}
 .m-tall .m-art{position:absolute;inset:0;height:100%;width:100%;}
 .m-square{grid-column:span 1;grid-row:span 1;}
-.m-art{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;transition:transform .8s var(--ease);}
+.m-art{position:absolute;inset:0;overflow:hidden;transition:transform .8s var(--ease);}
+.m-art img,.m-art video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;}
 .m-card:hover .m-art{transform:scale(1.06);}
 .m-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(8,8,8,.95) 0%,rgba(8,8,8,.3) 50%,transparent 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:20px;opacity:0;transition:opacity .4s;}
 .m-card:hover .m-overlay{opacity:1;}
 .m-platform{font-family:var(--font-mono);font-size:9px;letter-spacing:.2em;color:var(--gold);text-transform:uppercase;margin-bottom:6px;}
 .m-title{font-family:var(--font-display);font-size:18px;line-height:1.1;margin-bottom:6px;}
-.m-stats{display:flex;gap:14px;font-family:var(--font-mono);font-size:9px;letter-spacing:.12em;color:var(--muted);text-transform:uppercase;}
+.m-stats{display:none;}
 
 /* About */
 #about{padding:120px 48px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;border-top:1px solid var(--gray);}
@@ -202,7 +202,7 @@
 
   /* Jewelry grid — single column */
   .jewelry-grid { padding: 0 24px; grid-template-columns: 1fr; gap: 16px; }
-  .jewelry-card-inner { aspect-ratio: 4/3; }
+  .jewelry-card-inner { aspect-ratio: 3/4; }
 
   /* Freelance client cards — stack vertically */
   .client-list { padding: 0 24px; }
@@ -230,6 +230,15 @@
   #cta { grid-template-columns: 1fr; padding: 80px 24px; gap: 32px; }
   .cta-actions { align-items: flex-start; }
 }
+
+/* ── LIGHTBOX ── */
+.lb-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:8000;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s var(--ease);}
+.lb-overlay.active{opacity:1;pointer-events:all;}
+.lb-inner{position:relative;max-width:90vw;max-height:88vh;display:flex;align-items:center;justify-content:center;}
+.lb-inner img,.lb-inner video{max-width:90vw;max-height:88vh;object-fit:contain;display:block;border:1px solid rgba(201,169,110,0.15);}
+.lb-close{position:fixed;top:28px;right:36px;background:none;border:1px solid rgba(240,237,232,0.2);color:var(--white);font-family:var(--font-mono);font-size:14px;letter-spacing:.1em;padding:8px 14px;cursor:pointer;transition:border-color .2s,color .2s;}
+.lb-close:hover{border-color:var(--gold);color:var(--gold);}
+.m-card{cursor:pointer;}
 </style>
 </head>
 <body>
@@ -270,9 +279,6 @@
         <a href="contact.html" class="hero-btn-secondary">Contacto</a>
       </div>
     </div>
-  </div>
-  <div class="hero-bottom-bar">
-    <span class="hbb-year">Est. in 2023</span>
   </div>
 </section>
 
@@ -321,7 +327,7 @@
         <div class="jinfo-top"><span class="jinfo-client">Natanael Cano</span><span class="jinfo-tag">Dije — Oro 18k</span></div>
         <h3 class="jinfo-title">La Estrella de Mario — Dije & Cadena Signature</h3>
         <p class="jinfo-desc">Dije icónico inspirado en la estrella de Mario Bros, diseñado en oro amarillo 18k con acabado pulido espejo y gema central. Cadena tipo figaro de 60 cm con cierre de seguridad.</p>
-        <a href="projects/natanael-cano.html" class="jinfo-link">Ver proceso →</a>
+        <a href="projects/natanael-cano.html" class="btn-primary">Ver proceso →</a>
       </div>
     </div>
 
@@ -347,7 +353,7 @@
         <div class="jinfo-top"><span class="jinfo-client">Ozuna</span><span class="jinfo-tag">Dije — Zafiros</span></div>
         <h3 class="jinfo-title">Constelación Ozuna — Dije de Zafiros Multi-Color</h3>
         <p class="jinfo-desc">Dije diseñado en exclusiva para el tour de Ozuna en México por Maestros Joyeros. Estructura circular con zafiros naturales en tonalidades azul, violeta, rosa y aguamarina.</p>
-        <a href="projects/ozuna.html" class="jinfo-link">Ver proceso →</a>
+        <a href="projects/ozuna.html" class="btn-primary">Ver proceso →</a>
       </div>
     </div>
 
@@ -373,7 +379,7 @@
         <div class="jinfo-top"><span class="jinfo-client">Malilla</span><span class="jinfo-tag">Dije — Oro Rosa</span></div>
         <h3 class="jinfo-title">Corazón Eterno — Dije Concierto Palacio de los Deportes</h3>
         <p class="jinfo-desc">Dije de corazón diseñado por Maestros Joyeros para el concierto de Malilla en el Palacio de los Deportes. Elaborado en oro rosa 18k con rubí central y acabado satinado.</p>
-        <a href="projects/malilla.html" class="jinfo-link">Ver proceso →</a>
+        <a href="projects/malilla.html" class="btn-primary">Ver proceso →</a>
       </div>
     </div>
   </div>
@@ -389,18 +395,14 @@
     </div>
     <div class="wsh-right">
       <span class="wsh-count">3 casos de estudio</span>
-      <a href="#" class="btn-ver-mas">Ver todos los clientes <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M9 1l4 4-4 4M13 5H1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg></a>
     </div>
   </div>
 
   <div class="client-list reveal">
     <!-- C&A -->
     <div class="client-card">
-      <div class="client-media" style="aspect-ratio:9/16;max-height:520px;">
-        <div class="client-media-placeholder" style="background:linear-gradient(160deg,#0d0a04 0%,#1a1200 50%,#0a0800 100%);aspect-ratio:unset;height:100%;">
-          <div class="play-btn"><div class="play-circle"><div class="play-triangle"></div></div></div>
-          <div class="slide-art" style="pointer-events:none;"><svg width="90" height="120" viewBox="0 0 90 120" fill="none"><rect x="20" y="15" width="50" height="90" rx="4" stroke="rgba(201,169,110,0.25)" stroke-width="1"/><text x="45" y="55" text-anchor="middle" font-family="monospace" font-size="18" fill="rgba(201,169,110,0.5)" font-weight="bold">C&amp;A</text><text x="45" y="72" text-anchor="middle" font-family="monospace" font-size="8" fill="rgba(201,169,110,0.35)" letter-spacing="2">25 AÑOS</text><path d="M30 85 Q45 78 60 85" stroke="rgba(201,169,110,0.4)" stroke-width="1.5" fill="none"/></svg></div>
-        </div>
+      <div class="client-media" style="aspect-ratio:1/1;">
+        <video src="Freelance/C&A.mp4" autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block;"></video>
         <div class="video-badge" style="bottom:14px;top:auto;left:14px;"><div class="vb-dot"></div>Reel — Instagram</div>
       </div>
       <div class="client-info">
@@ -415,11 +417,8 @@
 
     <!-- EyeBuild -->
     <div class="client-card reverse">
-      <div class="client-media" style="aspect-ratio:9/16;max-height:520px;">
-        <div class="client-media-placeholder" style="background:linear-gradient(160deg,#060b10 0%,#091420 50%,#050a0e 100%);aspect-ratio:unset;height:100%;">
-          <div class="play-btn"><div class="play-circle"><div class="play-triangle"></div></div></div>
-          <div class="slide-art" style="pointer-events:none;"><svg width="80" height="120" viewBox="0 0 80 120" fill="none"><rect x="10" y="50" width="60" height="55" rx="3" fill="rgba(80,140,200,0.08)" stroke="rgba(80,140,200,0.3)" stroke-width="1"/><polygon points="40,10 70,50 10,50" fill="rgba(80,140,200,0.1)" stroke="rgba(80,140,200,0.4)" stroke-width="1"/><circle cx="55" cy="25" r="12" fill="none" stroke="rgba(80,200,255,0.5)" stroke-width="1.5"/><circle cx="55" cy="25" r="5" fill="rgba(80,200,255,0.3)"/><line x1="63" y1="33" x2="70" y2="40" stroke="rgba(80,200,255,0.4)" stroke-width="1.5"/></svg></div>
-        </div>
+      <div class="client-media" style="aspect-ratio:1/1;">
+        <video src="Freelance/EyeBuild.MP4" autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block;"></video>
         <div class="video-badge" style="bottom:14px;top:auto;left:14px;"><div class="vb-dot"></div>Comercial — Instagram</div>
       </div>
       <div class="client-info">
@@ -434,11 +433,8 @@
 
     <!-- Beauty Creations -->
     <div class="client-card">
-      <div class="client-media" style="aspect-ratio:9/16;max-height:520px;">
-        <div class="client-media-placeholder" style="background:linear-gradient(160deg,#10060e 0%,#1e0a1a 50%,#0e0510 100%);aspect-ratio:unset;height:100%;">
-          <div class="play-btn"><div class="play-circle"><div class="play-triangle"></div></div></div>
-          <div class="slide-art" style="pointer-events:none;"><svg width="90" height="110" viewBox="0 0 90 110" fill="none"><rect x="10" y="35" width="32" height="50" rx="3" fill="rgba(220,100,200,0.12)" stroke="rgba(220,100,200,0.4)" stroke-width="1"/><rect x="48" y="35" width="32" height="50" rx="3" fill="rgba(180,80,220,0.12)" stroke="rgba(180,80,220,0.4)" stroke-width="1"/><text x="26" y="15" text-anchor="middle" font-family="monospace" font-size="7" fill="rgba(220,100,200,0.6)" letter-spacing="1">DUET</text></svg></div>
-        </div>
+      <div class="client-media" style="aspect-ratio:1/1;">
+        <video src="Freelance/Beauty Creations.mp4" autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block;"></video>
         <div class="video-badge" style="bottom:14px;top:auto;left:14px;"><div class="vb-dot"></div>Motion — Instagram</div>
       </div>
       <div class="client-info">
@@ -452,48 +448,41 @@
     </div>
   </div>
 
-  <div class="ver-mas-row reveal">
-    <a href="#" class="btn-ver-mas">Ver todos los proyectos de clientes <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M9 1l4 4-4 4M13 5H1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg></a>
-  </div>
   <hr class="work-divider"/>
 
   <!-- SECCIÓN 3: PERSONAL -->
   <div class="work-section-header reveal">
     <div class="wsh-left">
       <p class="wsh-tag">Proyectos Personales & Redes Sociales</p>
-      <h2 class="wsh-title">EXPLORACIONES<br/>CREATIVAS</h2>
+      <h2 class="wsh-title">EXPLORACIONES CREATIVAS</h2>
     </div>
     <div class="wsh-right">
       <span class="wsh-count">12 piezas seleccionadas</span>
-      <a href="#" class="btn-ver-mas">Ver galería completa <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M9 1l4 4-4 4M13 5H1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg></a>
     </div>
   </div>
 
   <div class="masonry-grid reveal">
-    <div class="m-card m-wide" style="background:linear-gradient(135deg,#12100a,#1f1a0e);"><div class="m-art"><svg width="140" height="80" viewBox="0 0 140 80" fill="none"><polygon points="70,8 82,42 118,42 90,64 100,98 70,76 40,98 50,64 22,42 58,42" fill="rgba(201,169,110,0.15)" stroke="rgba(201,169,110,0.5)" stroke-width="1.5"/></svg></div><div class="m-overlay"><div class="m-platform">Instagram · 3D Render</div><div class="m-title">Gold Star Loop</div><div class="m-stats"><span>3.2K likes</span><span>204 saves</span></div></div></div>
-    <div class="m-card m-square" style="background:linear-gradient(160deg,#080a14,#0d1422);"><div class="m-art"><svg width="80" height="80" viewBox="0 0 80 80" fill="none"><circle cx="40" cy="40" r="30" stroke="rgba(80,140,255,0.4)" stroke-width="1.5"/><circle cx="40" cy="40" r="18" fill="rgba(80,140,255,0.1)" stroke="rgba(80,140,255,0.3)" stroke-width="1"/><circle cx="40" cy="40" r="8" fill="rgba(100,160,255,0.3)"/></svg></div><div class="video-badge"><div class="vb-dot"></div>Video</div><div class="m-overlay"><div class="m-platform">TikTok · Motion Loop</div><div class="m-title">Orbital — Geo Series</div><div class="m-stats"><span>22K views</span><span>1.1K likes</span></div></div></div>
-    <div class="m-card m-square" style="background:linear-gradient(135deg,#0e0609,#1a0d14);"><div class="m-art"><svg width="80" height="80" viewBox="0 0 80 80" fill="none"><path d="M40 65 C40 65 12 48 12 30 C12 20 20 13 30 13 C35 13 39 17 40 19 C41 17 45 13 50 13 C60 13 68 20 68 30 C68 48 40 65 40 65Z" fill="rgba(220,60,100,0.15)" stroke="rgba(220,80,120,0.5)" stroke-width="1.5"/></svg></div><div class="m-overlay"><div class="m-platform">Instagram · Concept</div><div class="m-title">Heart of Gold</div><div class="m-stats"><span>1.8K likes</span></div></div></div>
-    <div class="m-card m-tall" style="background:linear-gradient(160deg,#09100d,#111e15);"><div class="m-art"><svg width="80" height="130" viewBox="0 0 80 130" fill="none"><rect x="15" y="10" width="50" height="110" rx="5" stroke="rgba(80,180,100,0.3)" stroke-width="1"/><circle cx="40" cy="45" r="18" fill="rgba(80,180,100,0.1)" stroke="rgba(80,180,100,0.4)" stroke-width="1"/></svg></div><div class="video-badge"><div class="vb-dot"></div>Reel</div><div class="m-overlay"><div class="m-platform">Instagram · Reel Vertical</div><div class="m-title">Forest Product Study</div><div class="m-stats"><span>5.4K views</span><span>312 saves</span></div></div></div>
-    <div class="m-card m-square" style="background:linear-gradient(135deg,#100a04,#1c1208);"><div class="m-art"><svg width="80" height="80" viewBox="0 0 80 80" fill="none"><rect x="10" y="10" width="60" height="60" rx="4" fill="rgba(201,169,110,0.06)" stroke="rgba(201,169,110,0.3)" stroke-width="1"/><circle cx="40" cy="40" r="10" fill="rgba(201,169,110,0.2)" stroke="rgba(201,169,110,0.5)" stroke-width="1"/></svg></div><div class="m-overlay"><div class="m-platform">Behance · 3D Art</div><div class="m-title">Cube Dimension</div><div class="m-stats"><span>890 views</span></div></div></div>
-    <div class="m-card m-square" style="background:linear-gradient(135deg,#06080e,#0c1020);"><div class="m-art"><svg width="80" height="80" viewBox="0 0 80 80" fill="none"><path d="M40 10 Q65 25 65 40 Q65 60 40 70 Q15 60 15 40 Q15 25 40 10Z" fill="rgba(80,120,255,0.1)" stroke="rgba(80,140,255,0.4)" stroke-width="1.5"/><circle cx="40" cy="40" r="8" fill="rgba(100,160,255,0.3)"/></svg></div><div class="video-badge"><div class="vb-dot"></div>Video</div><div class="m-overlay"><div class="m-platform">TikTok · Animation</div><div class="m-title">Liquid Crystal</div><div class="m-stats"><span>31K views</span><span>2.2K likes</span></div></div></div>
-    <div class="m-card m-square" style="background:linear-gradient(135deg,#0f060d,#1c0e1a);"><div class="m-art"><svg width="80" height="80" viewBox="0 0 80 80" fill="none"><circle cx="40" cy="40" r="34" stroke="rgba(200,80,220,0.3)" stroke-width="1"/><path d="M28 40 Q40 25 52 40 Q40 55 28 40Z" fill="rgba(200,80,220,0.15)" stroke="rgba(200,80,220,0.5)" stroke-width="1"/></svg></div><div class="m-overlay"><div class="m-platform">Instagram · Motion</div><div class="m-title">Violet Bloom</div><div class="m-stats"><span>2.1K likes</span></div></div></div>
-    <div class="m-card m-wide" style="background:linear-gradient(135deg,#080e0a,#101a12);"><div class="m-art"><svg width="140" height="80" viewBox="0 0 140 80" fill="none"><path d="M10 60 Q35 20 70 40 Q105 60 130 20" stroke="rgba(80,200,120,0.5)" stroke-width="2" fill="none"/><circle cx="70" cy="40" r="12" fill="rgba(80,200,120,0.15)" stroke="rgba(80,200,120,0.4)" stroke-width="1"/></svg></div><div class="video-badge"><div class="vb-dot"></div>Loop</div><div class="m-overlay"><div class="m-platform">Instagram · 3D Loop</div><div class="m-title">Emerald Wave — Product Viz</div><div class="m-stats"><span>4.7K views</span><span>380 saves</span></div></div></div>
-    <div class="m-card m-square" style="background:linear-gradient(135deg,#0d0909,#1a1010);"><div class="m-art"><svg width="80" height="80" viewBox="0 0 80 80" fill="none"><polygon points="40,10 68,28 68,52 40,70 12,52 12,28" fill="rgba(220,80,80,0.1)" stroke="rgba(220,80,80,0.4)" stroke-width="1.5"/></svg></div><div class="m-overlay"><div class="m-platform">Behance · Study</div><div class="m-title">Hex Gem — Material Study</div><div class="m-stats"><span>560 views</span></div></div></div>
-    <div class="m-card m-square" style="background:linear-gradient(135deg,#0a0c10,#12141e);"><div class="m-art"><svg width="80" height="80" viewBox="0 0 80 80" fill="none"><circle cx="25" cy="25" r="15" fill="rgba(100,160,255,0.1)" stroke="rgba(100,160,255,0.4)" stroke-width="1"/><circle cx="55" cy="40" r="18" fill="rgba(140,100,255,0.1)" stroke="rgba(140,100,255,0.35)" stroke-width="1"/></svg></div><div class="m-overlay"><div class="m-platform">Instagram · 3D Art</div><div class="m-title">Nebula Cluster</div><div class="m-stats"><span>3.8K likes</span></div></div></div>
-    <div class="m-card m-square" style="background:linear-gradient(135deg,#100c06,#1c1408);"><div class="m-art"><svg width="80" height="80" viewBox="0 0 80 80" fill="none"><rect x="15" y="15" width="50" height="50" rx="8" fill="rgba(201,169,110,0.08)" stroke="rgba(201,169,110,0.3)" stroke-width="1"/><path d="M25 40 L35 30 L45 40 L55 30" stroke="rgba(201,169,110,0.6)" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></div><div class="video-badge"><div class="vb-dot"></div>Video</div><div class="m-overlay"><div class="m-platform">TikTok · Motion</div><div class="m-title">Gold Signal</div><div class="m-stats"><span>14K views</span><span>940 likes</span></div></div></div>
-    <div class="m-card m-wide" style="background:linear-gradient(160deg,#0c0810,#160f1e);"><div class="m-art"><svg width="160" height="80" viewBox="0 0 160 80" fill="none"><path d="M40 15 L60 28 L70 45 L55 58 L40 70 L25 58 L10 45 L20 28 Z" fill="rgba(160,80,255,0.1)" stroke="rgba(180,100,255,0.35)" stroke-width="1.5"/><circle cx="40" cy="43" r="10" fill="rgba(160,80,255,0.2)" stroke="rgba(200,140,255,0.5)" stroke-width="1"/></svg></div><div class="m-overlay"><div class="m-platform">Instagram · Reel</div><div class="m-title">Amethyst Tower — Gem Study</div><div class="m-stats"><span>8.9K views</span><span>620 saves</span></div></div></div>
+    <div class="m-card m-wide" style="background:linear-gradient(135deg,#12100a,#1f1a0e);"><div class="m-art"><img src="Personal/RENDER POOL.JPG" style="width:100%;height:100%;object-fit:cover;display:block;"/></div><div class="m-overlay"><div class="m-platform">Instagram · 3D Render</div><div class="m-title">Gold Star Loop</div><div class="m-stats"><span>3.2K likes</span><span>204 saves</span></div></div></div>
+    <div class="m-card m-square" style="background:linear-gradient(160deg,#080a14,#0d1422);"><div class="m-art"><img src="Personal/DEVICE RENDER.JPG" style="width:100%;height:100%;object-fit:cover;display:block;"/></div><div class="m-overlay"><div class="m-platform">TikTok · Motion Loop</div><div class="m-title">Orbital — Geo Series</div><div class="m-stats"><span>22K views</span><span>1.1K likes</span></div></div></div>
+    <div class="m-card m-square" style="background:linear-gradient(135deg,#0e0609,#1a0d14);"><div class="m-art"><img src="Personal/APPLE RENDER.JPG" style="width:100%;height:100%;object-fit:cover;display:block;"/></div><div class="m-overlay"><div class="m-platform">Instagram · Concept</div><div class="m-title">Heart of Gold</div><div class="m-stats"><span>1.8K likes</span></div></div></div>
+    <div class="m-card m-tall" style="background:linear-gradient(160deg,#09100d,#111e15);"><div class="m-art"><video src="Personal/Donut 3.0.mp4" autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block;"></video></div><div class="video-badge"><div class="vb-dot"></div>Reel</div><div class="m-overlay"><div class="m-platform">Instagram · Reel Vertical</div><div class="m-title">Forest Product Study</div><div class="m-stats"><span>5.4K views</span><span>312 saves</span></div></div></div>
+    <div class="m-card m-square" style="background:linear-gradient(135deg,#100a04,#1c1208);"><div class="m-art"><img src="Personal/Taddashi keyboard.png" style="width:100%;height:100%;object-fit:cover;display:block;"/></div><div class="m-overlay"><div class="m-platform">Behance · 3D Art</div><div class="m-title">Cube Dimension</div><div class="m-stats"><span>890 views</span></div></div></div>
+    <div class="m-card m-square" style="background:linear-gradient(135deg,#06080e,#0c1020);"><div class="m-art"><img src="Personal/BOMB RENDER.JPG" style="width:100%;height:100%;object-fit:cover;display:block;"/></div><div class="m-overlay"><div class="m-platform">TikTok · Animation</div><div class="m-title">Liquid Crystal</div><div class="m-stats"><span>31K views</span><span>2.2K likes</span></div></div></div>
+    <div class="m-card m-square" style="background:linear-gradient(135deg,#0f060d,#1c0e1a);"><div class="m-art"><img src="Personal/SHIRT RENDER.JPG" style="width:100%;height:100%;object-fit:cover;display:block;"/></div><div class="m-overlay"><div class="m-platform">Instagram · Motion</div><div class="m-title">Violet Bloom</div><div class="m-stats"><span>2.1K likes</span></div></div></div>
+    <div class="m-card m-wide" style="background:linear-gradient(135deg,#080e0a,#101a12);"><div class="m-art"><img src="Personal/CAR2v3.JPG" style="width:100%;height:100%;object-fit:cover;display:block;object-position:center 75%;"/></div><div class="m-overlay"><div class="m-platform">Instagram · 3D Loop</div><div class="m-title">Emerald Wave — Product Viz</div><div class="m-stats"><span>4.7K views</span><span>380 saves</span></div></div></div>
+    <div class="m-card m-square" style="background:linear-gradient(135deg,#0d0909,#1a1010);"><div class="m-art"><img src="Personal/NINTENDO RENDER.JPG" style="width:100%;height:100%;object-fit:cover;display:block;"/></div><div class="m-overlay"><div class="m-platform">Behance · Study</div><div class="m-title">Hex Gem — Material Study</div><div class="m-stats"><span>560 views</span></div></div></div>
+    <div class="m-card m-square" style="background:linear-gradient(135deg,#0a0c10,#12141e);"><div class="m-art"><img src="Personal/Headphones c render 3.png" style="width:100%;height:100%;object-fit:cover;display:block;"/></div><div class="m-overlay"><div class="m-platform">Instagram · 3D Art</div><div class="m-title">Nebula Cluster</div><div class="m-stats"><span>3.8K likes</span></div></div></div>
+    <div class="m-card m-square" style="background:linear-gradient(135deg,#100c06,#1c1408);"><div class="m-art"><img src="Personal/BBVA fondo.png" style="width:100%;height:100%;object-fit:cover;display:block;"/></div><div class="m-overlay"><div class="m-platform">TikTok · Motion</div><div class="m-title">Gold Signal</div><div class="m-stats"><span>14K views</span><span>940 likes</span></div></div></div>
+    <div class="m-card m-wide" style="background:linear-gradient(160deg,#0c0810,#160f1e);"><div class="m-art"><img src="Personal/TEST RENDER BOWLING.PNG" style="width:100%;height:100%;object-fit:cover;display:block;"/></div><div class="m-overlay"><div class="m-platform">Instagram · Reel</div><div class="m-title">Amethyst Tower — Gem Study</div><div class="m-stats"><span>8.9K views</span><span>620 saves</span></div></div></div>
   </div>
 
-  <div class="ver-mas-row reveal">
-    <a href="#" class="btn-ver-mas">Ver galería completa en Instagram <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M9 1l4 4-4 4M13 5H1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg></a>
-  </div>
 
 </section>
 
 <!-- ABOUT -->
 <section id="about">
   <div class="reveal">
-    <div class="about-img-frame"><div class="about-img-ph">ET</div><div class="about-img-label">Zapopan, Jalisco — MX</div></div>
+    <div class="about-img-frame"><img src="Portada yo.JPG" style="width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block;"/><div class="about-img-label">Zapopan, Jalisco — MX</div></div>
   </div>
   <div class="reveal">
     <p class="about-eyebrow">About</p>
@@ -511,7 +500,7 @@
 
 <!-- SERVICES -->
 <section id="services">
-  <div class="sh-wrap reveal"><p class="sh-label">What I do</p><h2 class="sh-title">SERVICIOS</h2></div>
+  <div class="sh-wrap reveal"><p class="sh-label">Lo que hago</p><h2 class="sh-title">SERVICIOS</h2></div>
   <div class="services-grid reveal">
     <div class="service-card"><div class="svc-num">01</div><span class="svc-icon">◈</span><h3 class="svc-name">MODELADO & RENDERS</h3><p class="svc-desc">Renders fotorrealistas de producto para e-commerce, catálogos y campañas.</p><ul class="svc-list"><li>Renders estáticos (1–5 ángulos)</li><li>Escenas lifestyle</li><li>Visualización de joyería</li></ul></div>
     <div class="service-card"><div class="svc-num">02</div><span class="svc-icon">◉</span><h3 class="svc-name">ANIMACIÓN 3D</h3><p class="svc-desc">Animaciones de producto para redes sociales, presentaciones y lanzamientos.</p><ul class="svc-list"><li>Animación de producto (10–30s)</li><li>Motion graphics</li><li>Pack para redes sociales</li></ul></div>
@@ -574,6 +563,15 @@
   </div>
 </footer>
 
+<!-- LIGHTBOX -->
+<div class="lb-overlay" id="lb">
+  <button class="lb-close" id="lbClose">✕ ESC</button>
+  <div class="lb-inner" id="lbInner">
+    <img id="lbImg" src="" style="display:none;"/>
+    <video id="lbVideo" autoplay muted loop playsinline style="display:none;"></video>
+  </div>
+</div>
+
 <script src="assets/js/global.js"></script>
 <script>
 // Carousel
@@ -592,6 +590,44 @@ function goTo(ci,slide){
   const c=getCount(ci);if(c)c.textContent=(slide+1)+' / '+total;
 }
 function step(ci,dir){goTo(ci,carouselState[ci]+dir);}
+
+// Touch swipe for carousels
+document.querySelectorAll('.jewelry-card').forEach(card=>{
+  const ci=parseInt(card.dataset.carousel);
+  let tx=0;
+  card.addEventListener('touchstart',e=>{tx=e.touches[0].clientX;},{passive:true});
+  card.addEventListener('touchend',e=>{
+    const dx=e.changedTouches[0].clientX-tx;
+    if(Math.abs(dx)>40){step(ci,dx<0?1:-1);}
+  },{passive:true});
+});
+
+// Lightbox
+const lb=document.getElementById('lb');
+const lbImg=document.getElementById('lbImg');
+const lbVideo=document.getElementById('lbVideo');
+const lbInner=document.getElementById('lbInner');
+
+function openLightbox(card){
+  const img=card.querySelector('.m-art img');
+  const vid=card.querySelector('.m-art video');
+  lbImg.style.display='none'; lbVideo.style.display='none';
+  if(img){lbImg.src=img.src; lbImg.style.display='block';}
+  else if(vid){lbVideo.src=vid.src; lbVideo.style.display='block';}
+  lb.classList.add('active');
+  document.body.style.overflow='hidden';
+}
+function closeLightbox(){
+  lb.classList.remove('active');
+  document.body.style.overflow='';
+  setTimeout(()=>{lbImg.src=''; lbVideo.src=''; lbVideo.style.display='none'; lbImg.style.display='none';},300);
+}
+document.querySelectorAll('.m-card').forEach(card=>{
+  card.addEventListener('click',()=>openLightbox(card));
+});
+document.getElementById('lbClose').addEventListener('click',closeLightbox);
+lb.addEventListener('click',e=>{if(e.target===lb)closeLightbox();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLightbox();});
 
 // Skill bars
 const skillObs=new IntersectionObserver(entries=>{
