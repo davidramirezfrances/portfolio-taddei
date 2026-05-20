@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Natanael Cano — La Estrella de Mario | Ernesto Taddei</title>
+<link rel="stylesheet" href="../assets/css/global.css"/>
+<style>
+/* ── PROJECT PAGE STYLES ── */
+.proj-hero{min-height:70vh;display:flex;align-items:flex-end;padding:0 64px 80px;position:relative;overflow:hidden;border-bottom:1px solid var(--gray);}
+.proj-hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 70% 40%, rgba(201,169,110,.07) 0%, transparent 65%);}
+.proj-back{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:9px;letter-spacing:.2em;color:var(--muted);text-decoration:none;text-transform:uppercase;position:absolute;top:110px;left:64px;transition:color .3s;}
+.proj-back:hover{color:var(--gold);}
+.proj-meta{display:flex;gap:16px;margin-bottom:24px;flex-wrap:wrap;}
+.proj-tag{font-family:var(--font-mono);font-size:9px;letter-spacing:.15em;color:var(--muted);text-transform:uppercase;border:1px solid var(--gray-mid);padding:4px 12px;}
+.proj-tag.gold{color:var(--gold);border-color:rgba(201,169,110,.3);background:var(--gold-dim);}
+.proj-title{font-family:var(--font-display);font-size:clamp(48px,7vw,100px);line-height:.92;letter-spacing:-.01em;margin-bottom:24px;}
+.proj-subtitle{font-size:14px;color:var(--muted2);line-height:1.7;max-width:520px;border-left:1px solid var(--gold);padding-left:16px;}
+.proj-year{font-family:var(--font-mono);font-size:9px;letter-spacing:.2em;color:var(--muted);text-transform:uppercase;position:absolute;bottom:80px;right:64px;}
+
+/* Gallery */
+.gallery-section{padding:80px 48px;border-bottom:1px solid var(--gray);}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;}
+.gallery-grid.two-col{grid-template-columns:repeat(2,1fr);}
+.gallery-img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;transition:transform .8s var(--ease);}
+.gallery-img:hover{transform:scale(1.03);}
+.gallery-item{overflow:hidden;background:var(--gray);}
+.gallery-item.wide{grid-column:span 2;aspect-ratio:16/9;}
+.gallery-item.wide .gallery-img{aspect-ratio:16/9;}
+
+/* Details */
+.details-section{padding:80px 48px;display:grid;grid-template-columns:1fr 1.4fr;gap:80px;border-bottom:1px solid var(--gray);}
+.details-specs{}
+.spec-label{font-family:var(--font-mono);font-size:9px;letter-spacing:.25em;color:var(--gold);text-transform:uppercase;margin-bottom:32px;}
+.spec-item{border-top:1px solid var(--gray);padding:16px 0;display:flex;justify-content:space-between;align-items:baseline;}
+.spec-key{font-family:var(--font-mono);font-size:9px;letter-spacing:.12em;color:var(--muted);text-transform:uppercase;}
+.spec-val{font-size:13px;color:var(--white);}
+.details-copy{}
+.copy-tag{font-family:var(--font-mono);font-size:9px;letter-spacing:.25em;color:var(--gold);text-transform:uppercase;margin-bottom:24px;}
+.copy-title{font-family:var(--font-display);font-size:clamp(28px,3vw,44px);line-height:1;margin-bottom:24px;}
+.copy-body{font-size:14px;color:var(--muted);line-height:1.9;}
+.copy-body p+p{margin-top:16px;}
+
+/* Next project */
+.next-section{padding:80px 48px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--gray);}
+.next-label{font-family:var(--font-mono);font-size:9px;letter-spacing:.25em;color:var(--muted);text-transform:uppercase;margin-bottom:12px;}
+.next-title{font-family:var(--font-display);font-size:clamp(32px,4vw,60px);line-height:1;}
+.next-link{display:inline-flex;align-items:center;gap:12px;font-family:var(--font-mono);font-size:10px;letter-spacing:.2em;color:var(--black);background:var(--gold);padding:14px 28px;text-decoration:none;text-transform:uppercase;transition:background .3s;margin-top:24px;white-space:nowrap;}
+.next-link:hover{background:var(--white);}
+.back-home{font-family:var(--font-mono);font-size:9px;letter-spacing:.2em;color:var(--muted);text-decoration:none;text-transform:uppercase;border-bottom:1px solid var(--gray-mid);padding-bottom:2px;transition:color .3s,border-color .3s;}
+.back-home:hover{color:var(--gold);border-color:var(--gold);}
+</style>
+</head>
+<body>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<nav>
+  <a href="../index.html" class="nav-logo">EITH STUDIO</a>
+  <ul class="nav-links">
+    <li><a href="../index.html#work">Work</a></li>
+    <li><a href="../index.html#about">About</a></li>
+    <li><a href="../index.html#services">Services</a></li>
+    <li><a href="../index.html#process">Process</a></li>
+  </ul>
+  <a href="../contact.html" class="nav-cta">Contact</a>
+</nav>
+
+<!-- HERO -->
+<section class="proj-hero">
+  <div class="proj-hero-bg"></div>
+  <a href="../index.html#work" class="proj-back">← Todos los proyectos</a>
+  <div>
+    <div class="proj-meta">
+      <span class="proj-tag gold">Joyería — Maestros Joyeros</span>
+      <span class="proj-tag">Oro 18k</span>
+      <span class="proj-tag">2024</span>
+    </div>
+    <h1 class="proj-title">LA ESTRELLA<br/>DE MARIO</h1>
+    <p class="proj-subtitle">Dije & Cadena Signature diseñado para Natanael Cano. Modelado 3D de precisión, producción artesanal en oro amarillo 18k con gema central.</p>
+  </div>
+  <span class="proj-year">Natanael Cano — 2024</span>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery-section reveal">
+  <div class="gallery-grid">
+    <div class="gallery-item"><img src="../Joyería/1.png" alt="La Estrella de Mario — Vista Frontal" class="gallery-img"/></div>
+    <div class="gallery-item"><img src="../Joyería/2.png" alt="La Estrella de Mario — Detalle Gema" class="gallery-img"/></div>
+    <div class="gallery-item"><img src="../Joyería/3.png" alt="La Estrella de Mario — Con Cadena" class="gallery-img"/></div>
+    <div class="gallery-item"><img src="../Joyería/4.png" alt="La Estrella de Mario — Lateral 45°" class="gallery-img"/></div>
+    <div class="gallery-item"><img src="../Joyería/5.png" alt="La Estrella de Mario — Render Final" class="gallery-img"/></div>
+    <div class="gallery-item"><img src="../Joyería/6.png" alt="La Estrella de Mario — Pieza Final" class="gallery-img"/></div>
+  </div>
+</section>
+
+<!-- DETAILS -->
+<section class="details-section reveal">
+  <div class="details-specs">
+    <p class="spec-label">Especificaciones</p>
+    <div class="spec-item"><span class="spec-key">Cliente</span><span class="spec-val">Natanael Cano</span></div>
+    <div class="spec-item"><span class="spec-key">Material</span><span class="spec-val">Oro amarillo 18k</span></div>
+    <div class="spec-item"><span class="spec-key">Acabado</span><span class="spec-val">Pulido espejo</span></div>
+    <div class="spec-item"><span class="spec-key">Cadena</span><span class="spec-val">Figaro 60 cm</span></div>
+    <div class="spec-item"><span class="spec-key">Gema</span><span class="spec-val">Central — engaste en garras</span></div>
+    <div class="spec-item"><span class="spec-key">Software</span><span class="spec-val">Blender 3D</span></div>
+    <div class="spec-item"><span class="spec-key">Año</span><span class="spec-val">2024</span></div>
+    <div class="spec-item"><span class="spec-key">Empresa</span><span class="spec-val">Maestros Joyeros</span></div>
+  </div>
+  <div class="details-copy">
+    <p class="copy-tag">El proceso</p>
+    <h2 class="copy-title">DE LA IDEA A LA PRODUCCIÓN</h2>
+    <div class="copy-body">
+      <p>Dije icónico inspirado en la estrella de Mario Bros, diseñado en oro amarillo 18k con acabado pulido espejo y gema central. El proceso comenzó con un brief detallado del artista, traducido a un modelo 3D de alta precisión en Blender.</p>
+      <p>El modelado 3D permitió explorar múltiples variantes de proporción y acabado antes de comprometerse con la producción artesanal, reduciendo tiempos de iteración y asegurando que el resultado final coincidiera exactamente con la visión del artista.</p>
+      <p>La cadena tipo figaro de 60 cm fue diseñada en conjunto con el dije para lograr un balance visual y de peso óptimo. Cierre de seguridad de precisión incluido. Pieza única producida a mano por los maestros artesanos del taller.</p>
+    </div>
+  </div>
+</section>
+
+<!-- NEXT PROJECT -->
+<div class="next-section reveal">
+  <div>
+    <p class="next-label">Siguiente proyecto</p>
+    <h2 class="next-title">CONSTELACIÓN<br/>OZUNA</h2>
+    <a href="ozuna.html" class="next-link">Ver proyecto →</a>
+  </div>
+  <a href="../index.html" class="back-home">← Volver al inicio</a>
+</div>
+
+<footer>
+  <span class="footer-copy">© 2026 Ernesto Taddei — Todos los derechos reservados</span>
+  <div class="footer-socials">
+    <a href="https://linkedin.com/in/ernesto-taddei/" target="_blank">LinkedIn</a>
+    <a href="#" target="_blank">Behance</a>
+    <a href="mailto:eitaddei@hotmail.com">Email</a>
+  </div>
+</footer>
+
+<script src="../assets/js/global.js"></script>
+</body>
+</html>

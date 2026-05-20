@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Malilla — Corazón Eterno | Ernesto Taddei</title>
+<link rel="stylesheet" href="../assets/css/global.css"/>
+<style>
+.proj-hero{min-height:70vh;display:flex;align-items:flex-end;padding:0 64px 80px;position:relative;overflow:hidden;border-bottom:1px solid var(--gray);}
+.proj-hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 70% 40%, rgba(220,60,80,.05) 0%, transparent 65%);}
+.proj-back{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:9px;letter-spacing:.2em;color:var(--muted);text-decoration:none;text-transform:uppercase;position:absolute;top:110px;left:64px;transition:color .3s;}
+.proj-back:hover{color:var(--gold);}
+.proj-meta{display:flex;gap:16px;margin-bottom:24px;flex-wrap:wrap;}
+.proj-tag{font-family:var(--font-mono);font-size:9px;letter-spacing:.15em;color:var(--muted);text-transform:uppercase;border:1px solid var(--gray-mid);padding:4px 12px;}
+.proj-tag.gold{color:var(--gold);border-color:rgba(201,169,110,.3);background:var(--gold-dim);}
+.proj-title{font-family:var(--font-display);font-size:clamp(48px,7vw,100px);line-height:.92;letter-spacing:-.01em;margin-bottom:24px;}
+.proj-subtitle{font-size:14px;color:var(--muted2);line-height:1.7;max-width:520px;border-left:1px solid var(--gold);padding-left:16px;}
+.proj-year{font-family:var(--font-mono);font-size:9px;letter-spacing:.2em;color:var(--muted);text-transform:uppercase;position:absolute;bottom:80px;right:64px;}
+.gallery-section{padding:80px 48px;border-bottom:1px solid var(--gray);}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;}
+.gallery-img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;transition:transform .8s var(--ease);}
+.gallery-img:hover{transform:scale(1.03);}
+.gallery-item{overflow:hidden;background:var(--gray);}
+.gallery-video{width:100%;aspect-ratio:9/16;object-fit:cover;display:block;grid-column:span 1;}
+.details-section{padding:80px 48px;display:grid;grid-template-columns:1fr 1.4fr;gap:80px;border-bottom:1px solid var(--gray);}
+.spec-label{font-family:var(--font-mono);font-size:9px;letter-spacing:.25em;color:var(--gold);text-transform:uppercase;margin-bottom:32px;}
+.spec-item{border-top:1px solid var(--gray);padding:16px 0;display:flex;justify-content:space-between;align-items:baseline;}
+.spec-key{font-family:var(--font-mono);font-size:9px;letter-spacing:.12em;color:var(--muted);text-transform:uppercase;}
+.spec-val{font-size:13px;color:var(--white);}
+.copy-tag{font-family:var(--font-mono);font-size:9px;letter-spacing:.25em;color:var(--gold);text-transform:uppercase;margin-bottom:24px;}
+.copy-title{font-family:var(--font-display);font-size:clamp(28px,3vw,44px);line-height:1;margin-bottom:24px;}
+.copy-body{font-size:14px;color:var(--muted);line-height:1.9;}
+.copy-body p+p{margin-top:16px;}
+.next-section{padding:80px 48px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--gray);}
+.next-label{font-family:var(--font-mono);font-size:9px;letter-spacing:.25em;color:var(--muted);text-transform:uppercase;margin-bottom:12px;}
+.next-title{font-family:var(--font-display);font-size:clamp(32px,4vw,60px);line-height:1;}
+.next-link{display:inline-flex;align-items:center;gap:12px;font-family:var(--font-mono);font-size:10px;letter-spacing:.2em;color:var(--black);background:var(--gold);padding:14px 28px;text-decoration:none;text-transform:uppercase;transition:background .3s;margin-top:24px;white-space:nowrap;}
+.next-link:hover{background:var(--white);}
+.back-home{font-family:var(--font-mono);font-size:9px;letter-spacing:.2em;color:var(--muted);text-decoration:none;text-transform:uppercase;border-bottom:1px solid var(--gray-mid);padding-bottom:2px;transition:color .3s,border-color .3s;}
+.back-home:hover{color:var(--gold);border-color:var(--gold);}
+</style>
+</head>
+<body>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<nav>
+  <a href="../index.html" class="nav-logo">EITH STUDIO</a>
+  <ul class="nav-links">
+    <li><a href="../index.html#work">Work</a></li>
+    <li><a href="../index.html#about">About</a></li>
+    <li><a href="../index.html#services">Services</a></li>
+    <li><a href="../index.html#process">Process</a></li>
+  </ul>
+  <a href="../contact.html" class="nav-cta">Contact</a>
+</nav>
+
+<section class="proj-hero">
+  <div class="proj-hero-bg"></div>
+  <a href="../index.html#work" class="proj-back">← Todos los proyectos</a>
+  <div>
+    <div class="proj-meta">
+      <span class="proj-tag gold">Joyería — Maestros Joyeros</span>
+      <span class="proj-tag">Oro Rosa 18k</span>
+      <span class="proj-tag">2024</span>
+    </div>
+    <h1 class="proj-title">CORAZÓN<br/>ETERNO</h1>
+    <p class="proj-subtitle">Dije Concierto diseñado para Malilla en el Palacio de los Deportes. Elaborado en oro rosa 18k con rubí central y acabado satinado. Modelado 3D con precisión milimétrica.</p>
+  </div>
+  <span class="proj-year">Malilla — 2024</span>
+</section>
+
+<section class="gallery-section reveal">
+  <div class="gallery-grid">
+    <div class="gallery-item"><img src="../Joyería/13.png" alt="Corazón Eterno — Vista Frontal" class="gallery-img"/></div>
+    <div class="gallery-item"><img src="../Joyería/14.png" alt="Corazón Eterno — Detalle Inner" class="gallery-img"/></div>
+    <div class="gallery-item"><img src="../Joyería/15.png" alt="Corazón Eterno — Con Cadena" class="gallery-img"/></div>
+    <div class="gallery-item"><img src="../Joyería/16.png" alt="Corazón Eterno — Rubí Central" class="gallery-img"/></div>
+    <div class="gallery-item"><img src="../Joyería/17.png" alt="Corazón Eterno — Vista 3/4" class="gallery-img"/></div>
+    <div class="gallery-item" style="background:#111;overflow:hidden;">
+      <video src="../Joyería/18.MP4" autoplay muted loop playsinline style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;"></video>
+    </div>
+  </div>
+</section>
+
+<section class="details-section reveal">
+  <div class="details-specs">
+    <p class="spec-label">Especificaciones</p>
+    <div class="spec-item"><span class="spec-key">Cliente</span><span class="spec-val">Malilla</span></div>
+    <div class="spec-item"><span class="spec-key">Evento</span><span class="spec-val">Concierto — Palacio de los Deportes</span></div>
+    <div class="spec-item"><span class="spec-key">Material</span><span class="spec-val">Oro rosa 18k</span></div>
+    <div class="spec-item"><span class="spec-key">Acabado</span><span class="spec-val">Satinado</span></div>
+    <div class="spec-item"><span class="spec-key">Gema</span><span class="spec-val">Rubí central</span></div>
+    <div class="spec-item"><span class="spec-key">Software</span><span class="spec-val">Blender 3D</span></div>
+    <div class="spec-item"><span class="spec-key">Año</span><span class="spec-val">2024</span></div>
+    <div class="spec-item"><span class="spec-key">Empresa</span><span class="spec-val">Maestros Joyeros</span></div>
+  </div>
+  <div class="details-copy">
+    <p class="copy-tag">El proceso</p>
+    <h2 class="copy-title">PRECISIÓN MILIMÉTRICA</h2>
+    <div class="copy-body">
+      <p>Dije de corazón diseñado por Maestros Joyeros para el concierto de Malilla en el Palacio de los Deportes. La forma del corazón fue modelada en 3D con precisión milimétrica para lograr el volumen y equilibrio visual que el artista buscaba.</p>
+      <p>El acabado satinado en el cuerpo del corazón contrasta con el brillo del rubí central, creando una pieza con carácter y profundidad visual. El diseño fue aprobado digitalmente antes de iniciar la producción artesanal.</p>
+      <p>El video de animación 3D fue producido para la presentación al cliente, permitiendo visualizar el movimiento y la reflexión de la luz sobre el metal desde múltiples ángulos antes de su fabricación.</p>
+    </div>
+  </div>
+</section>
+
+<div class="next-section reveal">
+  <div>
+    <p class="next-label">Siguiente proyecto</p>
+    <h2 class="next-title">C&A<br/>25 ANIVERSARIO</h2>
+    <a href="ca-aniversario.html" class="next-link">Ver proyecto →</a>
+  </div>
+  <a href="../index.html" class="back-home">← Volver al inicio</a>
+</div>
+
+<footer>
+  <span class="footer-copy">© 2026 Ernesto Taddei — Todos los derechos reservados</span>
+  <div class="footer-socials">
+    <a href="https://linkedin.com/in/ernesto-taddei/" target="_blank">LinkedIn</a>
+    <a href="#" target="_blank">Behance</a>
+    <a href="mailto:eitaddei@hotmail.com">Email</a>
+  </div>
+</footer>
+
+<script src="../assets/js/global.js"></script>
+</body>
+</html>

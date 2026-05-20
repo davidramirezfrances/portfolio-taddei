@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>C&A — 25 Aniversario | Ernesto Taddei</title>
+<link rel="stylesheet" href="../assets/css/global.css"/>
+<style>
+.proj-hero{min-height:70vh;display:flex;align-items:flex-end;padding:0 64px 80px;position:relative;overflow:hidden;border-bottom:1px solid var(--gray);}
+.proj-hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 70% 40%, rgba(201,169,110,.07) 0%, transparent 65%);}
+.proj-back{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:9px;letter-spacing:.2em;color:var(--muted);text-decoration:none;text-transform:uppercase;position:absolute;top:110px;left:64px;transition:color .3s;}
+.proj-back:hover{color:var(--gold);}
+.proj-meta{display:flex;gap:16px;margin-bottom:24px;flex-wrap:wrap;}
+.proj-tag{font-family:var(--font-mono);font-size:9px;letter-spacing:.15em;color:var(--muted);text-transform:uppercase;border:1px solid var(--gray-mid);padding:4px 12px;}
+.proj-tag.gold{color:var(--gold);border-color:rgba(201,169,110,.3);background:var(--gold-dim);}
+.proj-title{font-family:var(--font-display);font-size:clamp(48px,7vw,100px);line-height:.92;letter-spacing:-.01em;margin-bottom:24px;}
+.proj-subtitle{font-size:14px;color:var(--muted2);line-height:1.7;max-width:520px;border-left:1px solid var(--gold);padding-left:16px;}
+.proj-year{font-family:var(--font-mono);font-size:9px;letter-spacing:.2em;color:var(--muted);text-transform:uppercase;position:absolute;bottom:80px;right:64px;}
+.video-section{padding:80px 48px;border-bottom:1px solid var(--gray);}
+.video-wrap{position:relative;background:#0d0a04;border:1px solid var(--gray);overflow:hidden;max-width:480px;margin:0 auto;}
+.video-wrap video{width:100%;display:block;aspect-ratio:9/16;object-fit:cover;}
+.details-section{padding:80px 48px;display:grid;grid-template-columns:1fr 1.4fr;gap:80px;border-bottom:1px solid var(--gray);}
+.spec-label{font-family:var(--font-mono);font-size:9px;letter-spacing:.25em;color:var(--gold);text-transform:uppercase;margin-bottom:32px;}
+.spec-item{border-top:1px solid var(--gray);padding:16px 0;display:flex;justify-content:space-between;align-items:baseline;}
+.spec-key{font-family:var(--font-mono);font-size:9px;letter-spacing:.12em;color:var(--muted);text-transform:uppercase;}
+.spec-val{font-size:13px;color:var(--white);}
+.copy-tag{font-family:var(--font-mono);font-size:9px;letter-spacing:.25em;color:var(--gold);text-transform:uppercase;margin-bottom:24px;}
+.copy-title{font-family:var(--font-display);font-size:clamp(28px,3vw,44px);line-height:1;margin-bottom:24px;}
+.copy-body{font-size:14px;color:var(--muted);line-height:1.9;}
+.copy-body p+p{margin-top:16px;}
+.next-section{padding:80px 48px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--gray);}
+.next-label{font-family:var(--font-mono);font-size:9px;letter-spacing:.25em;color:var(--muted);text-transform:uppercase;margin-bottom:12px;}
+.next-title{font-family:var(--font-display);font-size:clamp(32px,4vw,60px);line-height:1;}
+.next-link{display:inline-flex;align-items:center;gap:12px;font-family:var(--font-mono);font-size:10px;letter-spacing:.2em;color:var(--black);background:var(--gold);padding:14px 28px;text-decoration:none;text-transform:uppercase;transition:background .3s;margin-top:24px;white-space:nowrap;}
+.next-link:hover{background:var(--white);}
+.back-home{font-family:var(--font-mono);font-size:9px;letter-spacing:.2em;color:var(--muted);text-decoration:none;text-transform:uppercase;border-bottom:1px solid var(--gray-mid);padding-bottom:2px;transition:color .3s,border-color .3s;}
+.back-home:hover{color:var(--gold);border-color:var(--gold);}
+</style>
+</head>
+<body>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<nav>
+  <a href="../index.html" class="nav-logo">EITH STUDIO</a>
+  <ul class="nav-links">
+    <li><a href="../index.html#work">Work</a></li>
+    <li><a href="../index.html#about">About</a></li>
+    <li><a href="../index.html#services">Services</a></li>
+    <li><a href="../index.html#process">Process</a></li>
+  </ul>
+  <a href="../contact.html" class="nav-cta">Contact</a>
+</nav>
+
+<section class="proj-hero">
+  <div class="proj-hero-bg"></div>
+  <a href="../index.html#work" class="proj-back">← Todos los proyectos</a>
+  <div>
+    <div class="proj-meta">
+      <span class="proj-tag gold">Freelance — C&A México</span>
+      <span class="proj-tag">VFX + Motion Tracking</span>
+      <span class="proj-tag">2024</span>
+    </div>
+    <h1 class="proj-title">C&A<br/>25 ANIVERSARIO</h1>
+    <p class="proj-subtitle">Animación especial para celebrar 25 años de C&A en México. Motion tracking para integrar elementos 3D y VFX sobre footage real, combinando identidad de marca con efectos visuales de alto impacto para Instagram.</p>
+  </div>
+  <span class="proj-year">C&A México — 2024</span>
+</section>
+
+<section class="video-section reveal">
+  <div class="video-wrap">
+    <video src="../Freelance/C&A.mp4" controls playsinline poster=""></video>
+  </div>
+</section>
+
+<section class="details-section reveal">
+  <div class="details-specs">
+    <p class="spec-label">Especificaciones</p>
+    <div class="spec-item"><span class="spec-key">Cliente</span><span class="spec-val">C&A México</span></div>
+    <div class="spec-item"><span class="spec-key">Tipo</span><span class="spec-val">Reel — Instagram</span></div>
+    <div class="spec-item"><span class="spec-key">Técnica</span><span class="spec-val">VFX + Motion Tracking</span></div>
+    <div class="spec-item"><span class="spec-key">Formato</span><span class="spec-val">Vertical 9:16</span></div>
+    <div class="spec-item"><span class="spec-key">Software</span><span class="spec-val">Blender 3D + Premiere Pro</span></div>
+    <div class="spec-item"><span class="spec-key">Año</span><span class="spec-val">2024</span></div>
+  </div>
+  <div class="details-copy">
+    <p class="copy-tag">El proceso</p>
+    <h2 class="copy-title">VFX DE ALTO IMPACTO</h2>
+    <div class="copy-body">
+      <p>Animación especial para celebrar el 25 aniversario de C&A en México. El proyecto utilizó motion tracking para integrar de forma precisa elementos 3D y VFX sobre footage real filmado en tienda, combinando la identidad visual de la marca con efectos de alto impacto.</p>
+      <p>La dirección creativa buscó respetar el lenguaje visual de C&A mientras se elevaba la producción con elementos 3D y gráficos de movimiento que resonaran con la audiencia en redes sociales. Producción end-to-end: brief, tracking, compositing y edición final.</p>
+      <p>El formato vertical 9:16 fue optimizado para Instagram Reels, maximizando el engagement con transiciones y efectos diseñados específicamente para el scroll del feed.</p>
+    </div>
+  </div>
+</section>
+
+<div class="next-section reveal">
+  <div>
+    <p class="next-label">Siguiente proyecto</p>
+    <h2 class="next-title">EYEBUILD<br/>COMERCIAL</h2>
+    <a href="eyebuild.html" class="next-link">Ver proyecto →</a>
+  </div>
+  <a href="../index.html" class="back-home">← Volver al inicio</a>
+</div>
+
+<footer>
+  <span class="footer-copy">© 2026 Ernesto Taddei — Todos los derechos reservados</span>
+  <div class="footer-socials">
+    <a href="https://linkedin.com/in/ernesto-taddei/" target="_blank">LinkedIn</a>
+    <a href="#" target="_blank">Behance</a>
+    <a href="mailto:eitaddei@hotmail.com">Email</a>
+  </div>
+</footer>
+
+<script src="../assets/js/global.js"></script>
+</body>
+</html>
