@@ -90,3 +90,17 @@ footer{border-top:1px solid var(--gray);padding:36px 48px;display:flex;align-ite
 @keyframes blinkDot{0%,100%{opacity:1;}50%{opacity:.2;}}
 @keyframes clientsScroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 @keyframes heroFloat{0%,100%{transform:translateY(0px) rotate(-1deg);}50%{transform:translateY(-16px) rotate(1deg);}}
+
+/* ── MOBILE ── */
+@media (max-width: 768px) {
+  body { cursor: auto; }
+  .cursor, .cursor-ring { display: none; }
+
+  nav { padding: 18px 24px; }
+  .nav-links { display: none; }
+
+  footer { flex-direction: column; gap: 16px; text-align: center; padding: 32px 24px; }
+  .footer-socials { justify-content: center; }
+
+  .sh-wrap { padding: 0 24px; }
+}

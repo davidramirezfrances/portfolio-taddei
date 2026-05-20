@@ -185,6 +185,51 @@
 .cta-title{font-family:var(--font-display);font-size:clamp(48px,7vw,110px);line-height:.95;letter-spacing:-.02em;}
 .cta-title span{color:var(--gold);}
 .cta-actions{display:flex;flex-direction:column;gap:14px;align-items:flex-end;flex-shrink:0;}
+
+/* ── MOBILE ── */
+@media (max-width: 768px) {
+  /* Hero */
+  #hero { padding: 0 24px; }
+  .hero-content { max-width: 100%; }
+  .hero-model-placeholder { right: -10%; width: 80%; opacity: 0.35; }
+  .hero-bottom-bar { left: 24px; right: 24px; }
+
+  /* Work */
+  #work { padding: 80px 0; }
+  .work-section-header { flex-direction: column; align-items: flex-start; gap: 10px; padding: 0 24px; }
+  .wsh-right { align-items: flex-start; }
+  .work-divider { margin: 60px 24px; }
+
+  /* Jewelry grid — single column */
+  .jewelry-grid { padding: 0 24px; grid-template-columns: 1fr; gap: 16px; }
+  .jewelry-card-inner { aspect-ratio: 4/3; }
+
+  /* Freelance client cards — stack vertically */
+  .client-list { padding: 0 24px; }
+  .client-card, .client-card.reverse { flex-direction: column; }
+  .client-media { width: 100% !important; height: 260px !important; max-height: 260px !important; aspect-ratio: unset !important; flex-shrink: 0; }
+  .client-media-placeholder { min-height: unset !important; height: 100% !important; aspect-ratio: unset !important; }
+  .client-info { padding: 28px 24px; }
+
+  /* Personal masonry — 2 columns */
+  .masonry-grid { padding: 0 24px; grid-template-columns: 1fr 1fr; grid-auto-rows: 150px; }
+  .ver-mas-row { padding: 32px 24px 0; }
+
+  /* About — single column */
+  #about { grid-template-columns: 1fr; gap: 40px; padding: 80px 24px; }
+
+  /* Services — single column */
+  #services { padding: 80px 0; }
+  .services-grid { padding: 0 24px; grid-template-columns: 1fr; }
+
+  /* Process — 2 columns */
+  #process { padding: 80px 24px; }
+  .process-steps { grid-template-columns: 1fr 1fr; }
+
+  /* CTA — single column */
+  #cta { grid-template-columns: 1fr; padding: 80px 24px; gap: 32px; }
+  .cta-actions { align-items: flex-start; }
+}
 </style>
 </head>
 <body>
@@ -340,7 +385,7 @@
   <div class="work-section-header reveal">
     <div class="wsh-left">
       <p class="wsh-tag">Trabajos para Clientes</p>
-      <h2 class="wsh-title">PROYECTOS<br/>FREELANCE</h2>
+      <h2 class="wsh-title">PROYECTOS FREELANCE</h2>
     </div>
     <div class="wsh-right">
       <span class="wsh-count">3 casos de estudio</span>
