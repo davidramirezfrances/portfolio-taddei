@@ -55,6 +55,19 @@
 .social-link:hover .social-platform,
 .social-link:hover .social-handle{color:var(--gold);}
 
+/* Success confirmation */
+.form-success{display:none;flex-direction:column;align-items:flex-start;gap:14px;padding:8px 0;}
+.form-success.show{display:flex;animation:fsIn .5s var(--ease) both;}
+.fs-check{width:60px;height:60px;overflow:visible;}
+.fs-circle{fill:none;stroke:var(--gold);stroke-width:2;stroke-dasharray:151;stroke-dashoffset:151;transform:rotate(-90deg);transform-origin:center;transform-box:fill-box;animation:fsDraw .6s ease forwards;}
+.fs-tick{fill:none;stroke:var(--gold);stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:40;stroke-dashoffset:40;animation:fsDrawTick .35s .55s ease forwards;}
+.fs-title{font-family:var(--font-display);font-size:28px;letter-spacing:.01em;color:var(--white);opacity:0;animation:fsFadeUp .5s .65s ease forwards;}
+.fs-sub{font-size:13px;color:var(--muted2);line-height:1.7;max-width:340px;border-left:1px solid var(--gold);padding-left:16px;opacity:0;animation:fsFadeUp .5s .8s ease forwards;}
+@keyframes fsDraw{to{stroke-dashoffset:0;}}
+@keyframes fsDrawTick{to{stroke-dashoffset:0;}}
+@keyframes fsIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+@keyframes fsFadeUp{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
+
 /* ── MOBILE ── */
 @media (max-width: 768px) {
   .contact-hero{min-height:auto;padding:120px 24px 56px;}
@@ -133,6 +146,14 @@
       </div>
       <button type="submit" class="form-submit">Enviar mensaje →</button>
     </form>
+    <div class="form-success" id="formSuccess" aria-hidden="true">
+      <svg class="fs-check" viewBox="0 0 52 52" aria-hidden="true">
+        <circle class="fs-circle" cx="26" cy="26" r="24"/>
+        <path class="fs-tick" d="M15 27 L23 35 L38 17"/>
+      </svg>
+      <p class="fs-title">Mensaje enviado</p>
+      <p class="fs-sub">Gracias por escribir — te responderé en 24–48 h hábiles.</p>
+    </div>
   </div>
 
   <!-- Info -->
@@ -206,9 +227,12 @@ function handleSubmit(e){
   fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body})
     .then(res=>{
       if(!res.ok) throw new Error('Network');
-      btn.textContent='Mensaje enviado ✓';
-      btn.style.background='var(--white)';
-      form.reset();
+      const label=form.parentElement.querySelector('.form-label');
+      if(label) label.style.display='none';
+      form.style.display='none';
+      const ok=document.getElementById('formSuccess');
+      ok.classList.add('show');
+      ok.setAttribute('aria-hidden','false');
     })
     .catch(()=>{
       btn.textContent='Error — intenta de nuevo';
