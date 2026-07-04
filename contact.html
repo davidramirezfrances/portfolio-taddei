@@ -103,7 +103,9 @@
   <!-- Form -->
   <div>
     <p class="form-label">Envíame un mensaje</p>
-    <form class="contact-form" onsubmit="handleSubmit(event)">
+    <form class="contact-form" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" onsubmit="handleSubmit(event)">
+      <input type="hidden" name="form-name" value="contact"/>
+      <p hidden><label>No llenar este campo: <input name="bot-field"/></label></p>
       <div class="field-row">
         <div class="field-group">
           <label for="name">Nombre</label>
@@ -196,10 +198,22 @@
 <script>
 function handleSubmit(e){
   e.preventDefault();
-  const btn=e.target.querySelector('.form-submit');
-  btn.textContent='Mensaje enviado ✓';
-  btn.style.background='var(--white)';
+  const form=e.target;
+  const btn=form.querySelector('.form-submit');
+  const body=new URLSearchParams(new FormData(form)).toString();
+  btn.textContent='Enviando…';
   btn.disabled=true;
+  fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body})
+    .then(res=>{
+      if(!res.ok) throw new Error('Network');
+      btn.textContent='Mensaje enviado ✓';
+      btn.style.background='var(--white)';
+      form.reset();
+    })
+    .catch(()=>{
+      btn.textContent='Error — intenta de nuevo';
+      btn.disabled=false;
+    });
 }
 </script>
 </body>
