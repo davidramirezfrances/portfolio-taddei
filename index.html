@@ -105,14 +105,13 @@
 
 /* Personal masonry */
 .ver-mas-row{display:flex;justify-content:center;padding:40px 48px 0;}
-.masonry-grid{padding:0 48px;display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:280px;gap:3px;align-items:stretch;}
-.m-card{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;min-height:220px;}
-.m-wide{grid-column:span 2;}
-.m-tall{grid-row:span 2;align-self:stretch;height:100%;}
-.m-tall .m-art{position:absolute;inset:0;height:100%;width:100%;}
-.m-square{grid-column:span 1;grid-row:span 1;}
-.m-art{position:absolute;inset:0;overflow:hidden;transition:transform .8s var(--ease);}
-.m-art img,.m-art video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;}
+.masonry-grid{padding:0 48px;display:flex;gap:3px;align-items:flex-start;}
+.m-col{flex:1;display:flex;flex-direction:column;gap:3px;min-width:0;}
+.m-card{position:relative;overflow:hidden;display:block;aspect-ratio:1;}
+.m-card.m-tall{aspect-ratio:1/2;}
+.m-card.m-short{aspect-ratio:4/3;}
+.m-art{width:100%;height:100%;overflow:hidden;transition:transform .8s var(--ease);}
+.m-art img,.m-art video{width:100%;height:100%;object-fit:cover;display:block;}
 .m-card:hover .m-art{transform:scale(1.06);}
 .m-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(8,8,8,.95) 0%,rgba(8,8,8,.3) 50%,transparent 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:20px;opacity:0;transition:opacity .4s;}
 .m-card:hover .m-overlay{opacity:1;}
@@ -214,7 +213,8 @@
   .client-info { padding: 28px 24px; }
 
   /* Personal masonry — 2 columns */
-  .masonry-grid { padding: 0 24px; grid-template-columns: 1fr 1fr; grid-auto-rows: 150px; }
+  .masonry-grid { padding: 0 24px; flex-wrap: wrap; }
+  .m-col { flex: 0 0 calc(50% - 1.5px); }
   .ver-mas-row { padding: 32px 24px 0; }
 
   /* About — single column */
@@ -459,28 +459,37 @@
       <h2 class="wsh-title">EXPLORACIONES CREATIVAS</h2>
     </div>
     <div class="wsh-right">
-      <span class="wsh-count">12 piezas seleccionadas</span>
+      <span class="wsh-count">14 piezas seleccionadas</span>
     </div>
   </div>
 
   <div class="masonry-grid reveal">
-    <!-- Row 1: 4 squares -->
-    <div class="m-card m-square" style="background:linear-gradient(135deg,#12100a,#1f1a0e);"><div class="m-art"><img src="Personal/RENDER POOL.JPG" style="width:100%;height:100%;object-fit:cover;display:block;"/></div><div class="m-overlay"><div class="m-platform">Instagram · 3D Render</div><div class="m-title">Gold Star Loop</div><div class="m-stats"><span>3.2K likes</span><span>204 saves</span></div></div></div>
-    <div class="m-card m-square" style="background:linear-gradient(160deg,#080a14,#0d1422);"><div class="m-art"><img src="Personal/DEVICE RENDER.JPG" style="width:100%;height:100%;object-fit:cover;display:block;"/></div><div class="m-overlay"><div class="m-platform">TikTok · Motion Loop</div><div class="m-title">Orbital — Geo Series</div><div class="m-stats"><span>22K views</span><span>1.1K likes</span></div></div></div>
-    <div class="m-card m-square" style="background:linear-gradient(135deg,#0e0609,#1a0d14);"><div class="m-art"><img src="Personal/APPLE RENDER.JPG" style="width:100%;height:100%;object-fit:cover;display:block;"/></div><div class="m-overlay"><div class="m-platform">Instagram · Concept</div><div class="m-title">Heart of Gold</div><div class="m-stats"><span>1.8K likes</span></div></div></div>
-    <div class="m-card m-square" style="background:linear-gradient(135deg,#080e0a,#101a12);"><div class="m-art"><img src="Personal/CAR2v3.JPG" style="width:100%;height:100%;object-fit:cover;display:block;object-position:center 75%;"/></div><div class="m-overlay"><div class="m-platform">Instagram · 3D Loop</div><div class="m-title">Emerald Wave — Product Viz</div><div class="m-stats"><span>4.7K views</span><span>380 saves</span></div></div></div>
-    <!-- Row 2: 4 squares -->
-    <div class="m-card m-square" style="background:linear-gradient(135deg,#100a04,#1c1208);"><div class="m-art"><img src="Personal/Taddashi keyboard.png" style="width:100%;height:100%;object-fit:cover;display:block;"/></div><div class="m-overlay"><div class="m-platform">Behance · 3D Art</div><div class="m-title">Cube Dimension</div><div class="m-stats"><span>890 views</span></div></div></div>
-    <div class="m-card m-square" style="background:linear-gradient(135deg,#06080e,#0c1020);"><div class="m-art"><img src="Personal/BOMB RENDER.JPG" style="width:100%;height:100%;object-fit:cover;display:block;"/></div><div class="m-overlay"><div class="m-platform">TikTok · Animation</div><div class="m-title">Liquid Crystal</div><div class="m-stats"><span>31K views</span><span>2.2K likes</span></div></div></div>
-    <div class="m-card m-square" style="background:linear-gradient(135deg,#0f060d,#1c0e1a);"><div class="m-art"><img src="Personal/SHIRT RENDER.JPG" style="width:100%;height:100%;object-fit:cover;display:block;"/></div><div class="m-overlay"><div class="m-platform">Instagram · Motion</div><div class="m-title">Violet Bloom</div><div class="m-stats"><span>2.1K likes</span></div></div></div>
-    <div class="m-card m-square" style="background:linear-gradient(135deg,#0d0909,#1a1010);"><div class="m-art"><img src="Personal/NINTENDO RENDER.JPG" style="width:100%;height:100%;object-fit:cover;display:block;"/></div><div class="m-overlay"><div class="m-platform">Behance · Study</div><div class="m-title">Hex Gem — Material Study</div><div class="m-stats"><span>560 views</span></div></div></div>
-    <!-- Rows 3-4: tall left | 2×2 squares | tall right -->
-    <div class="m-card m-tall" style="background:linear-gradient(135deg,#100c06,#1c1408);"><div class="m-art"><img src="Personal/BBVA fondo.png" style="width:100%;height:100%;object-fit:cover;display:block;"/></div><div class="m-overlay"><div class="m-platform">TikTok · Motion</div><div class="m-title">Gold Signal</div><div class="m-stats"><span>14K views</span><span>940 likes</span></div></div></div>
-    <div class="m-card m-square" style="background:linear-gradient(135deg,#0a0c10,#12141e);"><div class="m-art"><img src="Personal/Headphones c render 3.png" style="width:100%;height:100%;object-fit:cover;display:block;"/></div><div class="m-overlay"><div class="m-platform">Instagram · 3D Art</div><div class="m-title">Nebula Cluster</div><div class="m-stats"><span>3.8K likes</span></div></div></div>
-    <div class="m-card m-square" style="background:linear-gradient(160deg,#0c0810,#160f1e);"><div class="m-art"><img src="Personal/TEST RENDER BOWLING.PNG" style="width:100%;height:100%;object-fit:cover;display:block;"/></div><div class="m-overlay"><div class="m-platform">Instagram · Reel</div><div class="m-title">Amethyst Tower — Gem Study</div><div class="m-stats"><span>8.9K views</span><span>620 saves</span></div></div></div>
-    <div class="m-card m-tall" style="background:linear-gradient(160deg,#09100d,#111e15);"><div class="m-art"><video src="Personal/Donut 3.0.mp4" autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block;"></video></div><div class="video-badge"><div class="vb-dot"></div>Reel</div><div class="m-overlay"><div class="m-platform">Instagram · Reel Vertical</div><div class="m-title">Forest Product Study</div><div class="m-stats"><span>5.4K views</span><span>312 saves</span></div></div></div>
-    <div class="m-card m-square" style="background:linear-gradient(135deg,#0a0e0a,#10180e);"><div class="m-art"><img src="Personal/1.png" style="width:100%;height:100%;object-fit:cover;display:block;"/></div><div class="m-overlay"><div class="m-platform">Instagram · 3D Art</div><div class="m-title">Studio Piece</div></div></div>
-    <div class="m-card m-square" style="background:linear-gradient(135deg,#0c0a08,#181410);"><div class="m-art"><img src="Personal/RENDER.PNG" style="width:100%;height:100%;object-fit:cover;display:block;"/></div><div class="m-overlay"><div class="m-platform">Instagram · 3D Art</div><div class="m-title">Studio Render</div></div></div>
+    <!-- Column 1 -->
+    <div class="m-col">
+      <div class="m-card"><div class="m-art"><img src="Personal/RENDER POOL.JPG" loading="lazy" alt="Pool 3D render" style="object-position:center 55%;"/></div><div class="m-overlay"><div class="m-platform">Instagram · 3D Render</div><div class="m-title">Break Shot — Pool Study</div></div></div>
+      <div class="m-card m-short"><div class="m-art"><img src="Personal/Taddashi keyboard.png" loading="lazy" alt="Teclado Taddashi render"/></div><div class="m-overlay"><div class="m-platform">Behance · Product Viz</div><div class="m-title">Taddashi Keyboard</div></div></div>
+      <div class="m-card m-tall"><div class="m-art"><img src="Personal/IMG_0939.JPG" loading="lazy" alt="Jaz Tea botella render"/></div><div class="m-overlay"><div class="m-platform">Instagram · Product</div><div class="m-title">Jaz Tea — Bottle Render</div></div></div>
+    </div>
+    <!-- Column 2 -->
+    <div class="m-col">
+      <div class="m-card"><div class="m-art"><img src="Personal/DEVICE RENDER.JPG" loading="lazy" alt="Dispositivo render"/></div><div class="m-overlay"><div class="m-platform">Instagram · 3D Render</div><div class="m-title">Signal Device</div></div></div>
+      <div class="m-card"><div class="m-art"><img src="Personal/BOMB RENDER.JPG" loading="lazy" alt="Render de fuego"/></div><div class="m-overlay"><div class="m-platform">TikTok · Animation</div><div class="m-title">Fireball — Motion Study</div></div></div>
+      <div class="m-card"><div class="m-art"><img src="Personal/LAMP RENDER.JPG" loading="lazy" alt="Lámpara naranja render" style="object-position:center 60%;"/></div><div class="m-overlay"><div class="m-platform">Instagram · Product</div><div class="m-title">Nessino — Lamp Render</div></div></div>
+      <div class="m-card"><div class="m-art"><img src="Personal/1.png" loading="lazy" alt="Akron explosión dorada render"/></div><div class="m-overlay"><div class="m-platform">Instagram · 3D Art</div><div class="m-title">Akron — Gold Burst</div></div></div>
+    </div>
+    <!-- Column 3 -->
+    <div class="m-col">
+      <div class="m-card"><div class="m-art"><img src="Personal/APPLE RENDER.JPG" loading="lazy" alt="Computadora retro render" style="object-position:center 72%;"/></div><div class="m-overlay"><div class="m-platform">Behance · 3D Art</div><div class="m-title">Retro Machine</div></div></div>
+      <div class="m-card"><div class="m-art"><img src="Personal/SHIRT RENDER.JPG" loading="lazy" alt="Hoodie Eith Studio render"/></div><div class="m-overlay"><div class="m-platform">Instagram · Product</div><div class="m-title">Eith Studio Hoodie</div></div></div>
+      <div class="m-card"><div class="m-art"><img src="Personal/IMG_3884.JPG" loading="lazy" alt="Anillo banda oro render"/></div><div class="m-overlay"><div class="m-platform">Instagram · Joyería</div><div class="m-title">Red Line — Gold Band</div></div></div>
+      <div class="m-card"><div class="m-art"><img src="Personal/RENDER.PNG" loading="lazy" alt="Anillo hexagonal render" style="object-position:center 28%;"/></div><div class="m-overlay"><div class="m-platform">Instagram · Joyería</div><div class="m-title">Signet — Hex Ring</div></div></div>
+    </div>
+    <!-- Column 4 -->
+    <div class="m-col">
+      <div class="m-card"><div class="m-art"><img src="Personal/3C0E3890-A65E-4C78-A0BA-49B7B1BBB540.JPG" loading="lazy" alt="Hypercar negro render"/></div><div class="m-overlay"><div class="m-platform">Instagram · 3D Render</div><div class="m-title">Midnight — Hypercar</div></div></div>
+      <div class="m-card m-tall"><div class="m-art"><img src="Personal/NINTENDO RENDER.JPG" loading="lazy" alt="Consola retro render"/></div><div class="m-overlay"><div class="m-platform">Behance · 3D Art</div><div class="m-title">Retro Console</div></div></div>
+      <div class="m-card"><div class="m-art"><video src="Personal/Donut 3.0.mp4" autoplay muted loop playsinline></video></div><div class="video-badge"><div class="vb-dot"></div>Reel</div><div class="m-overlay"><div class="m-platform">Instagram · Reel Vertical</div><div class="m-title">Glazed — Donut Loop</div></div></div>
+    </div>
   </div>
 
 
@@ -570,7 +579,7 @@
   <span class="footer-copy">© 2026 Ernesto Taddei — Todos los derechos reservados</span>
   <div class="footer-socials">
     <a href="https://linkedin.com/in/ernesto-taddei/" target="_blank">LinkedIn</a>
-    <a href="#" target="_blank">Behance</a>
+    <a href="https://www.behance.net/ernestotaddei" target="_blank" rel="noopener">Behance</a>
     <a href="mailto:eitaddei@hotmail.com">Email</a>
   </div>
 </footer>
