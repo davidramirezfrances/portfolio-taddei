@@ -108,7 +108,7 @@
 .masonry-grid{padding:0 48px;display:flex;gap:3px;align-items:flex-start;}
 .m-col{flex:1;display:flex;flex-direction:column;gap:3px;min-width:0;}
 .m-card{position:relative;overflow:hidden;display:block;aspect-ratio:1;}
-.m-card.m-tall{aspect-ratio:1/2;}
+.m-card.m-tall{aspect-ratio:1/2.015;}
 .m-card.m-short{aspect-ratio:4/3;}
 .m-art{width:100%;height:100%;overflow:hidden;transition:transform .8s var(--ease);}
 .m-art img,.m-art video{width:100%;height:100%;object-fit:cover;display:block;}
@@ -120,8 +120,8 @@
 .m-stats{display:none;}
 
 /* About */
-#about{padding:120px 48px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;border-top:1px solid var(--gray);}
-.about-img-frame{aspect-ratio:4/5;background:var(--gray);position:relative;overflow:hidden;}
+#about{padding:120px 48px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:stretch;border-top:1px solid var(--gray);}
+.about-img-frame{background:var(--gray);position:relative;overflow:hidden;height:100%;}
 .about-img-ph{width:100%;height:100%;background:linear-gradient(160deg,#111 0%,#1d1508 60%,#111 100%);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:120px;color:rgba(201,169,110,.08);letter-spacing:-.05em;}
 .about-img-label{position:absolute;bottom:-1px;left:-1px;background:var(--gold);color:var(--black);font-family:var(--font-mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;padding:7px 14px;}
 .about-eyebrow{font-family:var(--font-mono);font-size:10px;letter-spacing:.3em;color:var(--gold);text-transform:uppercase;margin-bottom:20px;}
@@ -129,9 +129,7 @@
 .about-body{font-size:14px;color:var(--muted);line-height:1.9;margin-bottom:40px;}
 .about-body strong{color:var(--white);font-weight:400;}
 .skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:40px;}
-.skill-name{font-family:var(--font-mono);font-size:9px;letter-spacing:.15em;color:var(--muted);text-transform:uppercase;margin-bottom:7px;display:flex;justify-content:space-between;}
-.skill-track{height:1px;background:var(--gray);position:relative;}
-.skill-fill{position:absolute;top:0;left:0;height:1px;background:var(--gold);width:0;transition:width 1.5s var(--ease);}
+.skill-name{font-family:var(--font-mono);font-size:9px;letter-spacing:.15em;color:var(--muted);text-transform:uppercase;padding-bottom:10px;border-bottom:1px solid var(--gray);}
 .award-box{border:1px solid var(--gray);padding:18px 22px;display:flex;gap:14px;align-items:center;}
 .award-icon{width:38px;height:38px;background:var(--gold-dim);border:1px solid rgba(201,169,110,.4);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;}
 .award-title{font-size:13px;font-weight:500;}
@@ -144,12 +142,11 @@
 .service-card::before{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease);}
 .service-card:hover::before{transform:scaleX(1);}
 .service-card:hover{background:rgba(201,169,110,.03);}
-.svc-num{font-family:var(--font-mono);font-size:10px;letter-spacing:.2em;color:var(--gold);margin-bottom:28px;}
-.svc-icon{font-size:28px;margin-bottom:16px;display:block;}
+.svc-num{font-family:var(--font-display);font-size:52px;letter-spacing:.02em;color:var(--gold);margin-bottom:20px;line-height:1;}
 .svc-name{font-family:var(--font-display);font-size:28px;line-height:1;margin-bottom:14px;letter-spacing:.02em;}
-.svc-desc{font-size:12px;color:var(--muted);line-height:1.8;margin-bottom:28px;}
+.svc-desc{font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:28px;}
 .svc-list{list-style:none;display:flex;flex-direction:column;gap:7px;}
-.svc-list li{font-family:var(--font-mono);font-size:9px;letter-spacing:.15em;color:var(--gray-light);text-transform:uppercase;padding-left:14px;position:relative;}
+.svc-list li{font-family:var(--font-mono);font-size:11px;letter-spacing:.15em;color:var(--gray-light);text-transform:uppercase;padding-left:14px;position:relative;}
 .svc-list li::before{content:'—';position:absolute;left:0;color:var(--gold);}
 
 /* Client logo band */
@@ -165,19 +162,21 @@
 .clients-track:not(:hover) .client-logo-item{opacity:.45;}
 .clients-track:hover .client-logo-item{opacity:.35;}
 .clients-track:hover .client-logo-item:hover{opacity:1;}
-.client-logo-box{height:44px;display:flex;align-items:center;justify-content:center;color:var(--white);transition:color .3s;}
-.client-logo-item:hover .client-logo-box{color:var(--gold);}
+.client-logo-box{height:52px;display:flex;align-items:center;justify-content:center;}
+.client-logo-box img{height:100%;width:auto;object-fit:contain;display:block;}
 .client-logo-name{font-family:var(--font-mono);font-size:9px;letter-spacing:.18em;color:var(--muted);text-transform:uppercase;white-space:nowrap;transition:color .3s;}
 .client-logo-item:hover .client-logo-name{color:var(--gold);}
 
 /* Process */
 #process{padding:120px 48px;border-top:1px solid var(--gray);}
 .process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:72px;border-left:1px solid var(--gray);}
-.process-step{padding:36px 32px;border-right:1px solid var(--gray);border-bottom:1px solid var(--gray);position:relative;transition:background .3s;}
+.process-step{background:var(--black);padding:44px 32px;border-right:1px solid var(--gray);border-bottom:1px solid var(--gray);position:relative;overflow:hidden;transition:background .4s;}
+.process-step::before{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease);}
+.process-step:hover::before{transform:scaleX(1);}
 .process-step:hover{background:rgba(201,169,110,.03);}
-.step-num{font-family:var(--font-display);font-size:72px;color:rgba(201,169,110,.1);line-height:1;margin-bottom:14px;}
-.step-title{font-family:var(--font-display);font-size:20px;letter-spacing:.04em;margin-bottom:10px;}
-.step-desc{font-size:12px;color:var(--muted);line-height:1.7;}
+.step-num{font-family:var(--font-display);font-size:52px;letter-spacing:.02em;color:var(--gold);margin-bottom:20px;line-height:1;}
+.step-title{font-family:var(--font-display);font-size:28px;line-height:1;margin-bottom:14px;letter-spacing:.02em;}
+.step-desc{font-size:15px;color:var(--muted);line-height:1.8;}
 
 /* CTA */
 #cta{padding:120px 48px;border-top:1px solid var(--gray);display:grid;grid-template-columns:1fr auto;align-items:center;gap:60px;}
@@ -219,6 +218,7 @@
 
   /* About — single column */
   #about { grid-template-columns: 1fr; gap: 40px; padding: 80px 24px; }
+  .about-img-frame { aspect-ratio: 4/5; height: auto; }
 
   /* Services — single column */
   #services { padding: 80px 0; }
@@ -298,7 +298,7 @@
   <!-- SECCIÓN 1: MAESTROS JOYEROS -->
   <div class="work-section-header reveal">
     <div class="wsh-left">
-      <p class="wsh-tag">Maestros Joyeros — Diseño para Artistas y Famosos</p>
+      <p class="wsh-tag">Maestros Joyeros</p>
       <h2 class="wsh-title">JOYERÍA DE ÉLITE</h2>
     </div>
     <div class="wsh-right">
@@ -392,7 +392,7 @@
   <!-- SECCIÓN 2: FREELANCE -->
   <div class="work-section-header reveal">
     <div class="wsh-left">
-      <p class="wsh-tag">Trabajos para Clientes</p>
+      <p class="wsh-tag">Client Work</p>
       <h2 class="wsh-title">PROYECTOS FREELANCE</h2>
     </div>
     <div class="wsh-right">
@@ -419,7 +419,7 @@
 
     <!-- EyeBuild -->
     <div class="client-card reverse">
-      <div class="client-media" style="aspect-ratio:1/1;">
+      <div class="client-media" style="aspect-ratio:9/16;">
         <video src="Freelance/EyeBuild.MP4" autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block;"></video>
         <div class="video-badge" style="bottom:14px;top:auto;left:14px;"><div class="vb-dot"></div>Comercial — Instagram</div>
       </div>
@@ -427,7 +427,7 @@
         <div class="cinfo-num">02 — 2024</div>
         <span class="cinfo-category">Animación 3D + Comercial</span>
         <h3 class="cinfo-title">EYEBUILD — CÁMARAS DE SEGURIDAD</h3>
-        <p class="cinfo-desc">Comercial 3D completo para EyeBuild, empresa de cámaras de seguridad para sitios de construcción. Modelado y animación 3D del producto, ambientación de obra con personajes y maquinaria.</p>
+        <p class="cinfo-desc">Comercial 3D completo para EyeBuild, empresa de cámaras de seguridad para sitios de construcción. Modelado y animación 3D del producto, ambientación de obra, efectos de sonido y edición de video.</p>
         <div class="cinfo-tags"><span class="ctag">Modelado 3D</span><span class="ctag">Animación 3D</span><span class="ctag">Ambientación</span><span class="ctag">Edición Video</span></div>
         <a href="projects/eyebuild.html" class="cinfo-link">Ver caso completo →</a>
       </div>
@@ -455,8 +455,8 @@
   <!-- SECCIÓN 3: PERSONAL -->
   <div class="work-section-header reveal">
     <div class="wsh-left">
-      <p class="wsh-tag">Proyectos Personales & Redes Sociales</p>
-      <h2 class="wsh-title">EXPLORACIONES CREATIVAS</h2>
+      <p class="wsh-tag">Personal Projects & Social Media</p>
+      <h2 class="wsh-title">Proyectos Personales & Redes Sociales</h2>
     </div>
     <div class="wsh-right">
       <span class="wsh-count">14 piezas seleccionadas</span>
@@ -467,8 +467,9 @@
     <!-- Column 1 -->
     <div class="m-col">
       <div class="m-card"><div class="m-art"><img src="Personal/RENDER POOL.JPG" loading="lazy" alt="Pool 3D render" style="object-position:center 55%;"/></div><div class="m-overlay"><div class="m-platform">Instagram · 3D Render</div><div class="m-title">Break Shot — Pool Study</div></div></div>
-      <div class="m-card m-short"><div class="m-art"><img src="Personal/Taddashi keyboard.png" loading="lazy" alt="Teclado Taddashi render"/></div><div class="m-overlay"><div class="m-platform">Behance · Product Viz</div><div class="m-title">Taddashi Keyboard</div></div></div>
+      <div class="m-card"><div class="m-art"><img src="Personal/Taddashi keyboard.png" loading="lazy" alt="Teclado Taddashi render"/></div><div class="m-overlay"><div class="m-platform">Behance · Product Viz</div><div class="m-title">Taddashi Keyboard</div></div></div>
       <div class="m-card m-tall"><div class="m-art"><img src="Personal/IMG_0939.JPG" loading="lazy" alt="Jaz Tea botella render"/></div><div class="m-overlay"><div class="m-platform">Instagram · Product</div><div class="m-title">Jaz Tea — Bottle Render</div></div></div>
+      <div class="m-card"><div class="m-art"><img src="Personal/cocina.png" loading="lazy" alt="Cocina render arquitectónico" style="object-position:left center;"/></div><div class="m-overlay"><div class="m-platform">Behance · Architectural Viz</div><div class="m-title">Kitchen — Interior Render</div></div></div>
     </div>
     <!-- Column 2 -->
     <div class="m-col">
@@ -476,19 +477,21 @@
       <div class="m-card"><div class="m-art"><img src="Personal/BOMB RENDER.JPG" loading="lazy" alt="Render de fuego"/></div><div class="m-overlay"><div class="m-platform">TikTok · Animation</div><div class="m-title">Fireball — Motion Study</div></div></div>
       <div class="m-card"><div class="m-art"><img src="Personal/LAMP RENDER.JPG" loading="lazy" alt="Lámpara naranja render" style="object-position:center 60%;"/></div><div class="m-overlay"><div class="m-platform">Instagram · Product</div><div class="m-title">Nessino — Lamp Render</div></div></div>
       <div class="m-card"><div class="m-art"><img src="Personal/1.png" loading="lazy" alt="Akron explosión dorada render"/></div><div class="m-overlay"><div class="m-platform">Instagram · 3D Art</div><div class="m-title">Akron — Gold Burst</div></div></div>
+      <div class="m-card"><div class="m-art"><video src="Personal/anim naranja.mp4" autoplay muted loop playsinline></video></div><div class="m-overlay"><div class="m-platform">Instagram · Animation</div><div class="m-title">Orange Study — Motion</div></div></div>
     </div>
     <!-- Column 3 -->
     <div class="m-col">
       <div class="m-card"><div class="m-art"><img src="Personal/APPLE RENDER.JPG" loading="lazy" alt="Computadora retro render" style="object-position:center 72%;"/></div><div class="m-overlay"><div class="m-platform">Behance · 3D Art</div><div class="m-title">Retro Machine</div></div></div>
       <div class="m-card"><div class="m-art"><img src="Personal/SHIRT RENDER.JPG" loading="lazy" alt="Hoodie Eith Studio render"/></div><div class="m-overlay"><div class="m-platform">Instagram · Product</div><div class="m-title">Eith Studio Hoodie</div></div></div>
       <div class="m-card"><div class="m-art"><img src="Personal/IMG_3884.JPG" loading="lazy" alt="Anillo banda oro render"/></div><div class="m-overlay"><div class="m-platform">Instagram · Joyería</div><div class="m-title">Red Line — Gold Band</div></div></div>
-      <div class="m-card"><div class="m-art"><img src="Personal/RENDER.PNG" loading="lazy" alt="Anillo hexagonal render" style="object-position:center 28%;"/></div><div class="m-overlay"><div class="m-platform">Instagram · Joyería</div><div class="m-title">Signet — Hex Ring</div></div></div>
+      <div class="m-card m-tall"><div class="m-art"><img src="Personal/RENDER.PNG" loading="lazy" alt="Anillo hexagonal render" style="object-position:center 22%;"/></div><div class="m-overlay"><div class="m-platform">Instagram · Joyería</div><div class="m-title">Signet — Hex Ring</div></div></div>
     </div>
     <!-- Column 4 -->
     <div class="m-col">
       <div class="m-card"><div class="m-art"><img src="Personal/3C0E3890-A65E-4C78-A0BA-49B7B1BBB540.JPG" loading="lazy" alt="Hypercar negro render"/></div><div class="m-overlay"><div class="m-platform">Instagram · 3D Render</div><div class="m-title">Midnight — Hypercar</div></div></div>
       <div class="m-card m-tall"><div class="m-art"><img src="Personal/NINTENDO RENDER.JPG" loading="lazy" alt="Consola retro render"/></div><div class="m-overlay"><div class="m-platform">Behance · 3D Art</div><div class="m-title">Retro Console</div></div></div>
-      <div class="m-card"><div class="m-art"><video src="Personal/Donut 3.0.mp4" autoplay muted loop playsinline></video></div><div class="video-badge"><div class="vb-dot"></div>Reel</div><div class="m-overlay"><div class="m-platform">Instagram · Reel Vertical</div><div class="m-title">Glazed — Donut Loop</div></div></div>
+      <div class="m-card"><div class="m-art"><video src="Personal/Donut 3.0.mp4" autoplay muted loop playsinline></video></div><div class="m-overlay"><div class="m-platform">Instagram · Reel Vertical</div><div class="m-title">Glazed — Donut Loop</div></div></div>
+      <div class="m-card"><div class="m-art"><img src="Personal/thumbnail.png" loading="lazy" alt="Alea Ecopoint módulos render"/></div><div class="m-overlay"><div class="m-platform">Behance · Product Design</div><div class="m-title">Alea Ecopoint — Modules</div></div></div>
     </div>
   </div>
 
@@ -502,13 +505,15 @@
   </div>
   <div class="reveal">
     <p class="about-eyebrow">About</p>
-    <h2 class="about-headline">DISEÑADOR.<br/>DIRECTOR.<br/>CREADOR.</h2>
-    <p class="about-body">Soy Ernesto Taddei, <strong>Jefe de Diseño 3D en Maestros Joyeros</strong>, donde dirijo un equipo de 10 diseñadores y llevo proyectos de la idea a la producción internacional.<br/><br/>Con raíces en el Tec de Monterrey y experiencia internacional en España, combino <strong>ingeniería de producto con visión creativa</strong>. Ganador Nacional Diseña México 2022.</p>
+    <h2 class="about-headline">DISEÑADOR.<br/>CREADOR.<br/>LÍDER.</h2>
+    <p class="about-body">Soy Ernesto Taddei, actual <strong>Jefe de Diseño 3D en Maestros Joyeros</strong>, donde dirijo un equipo de más de 10 diseñadores y llevo proyectos desde la idea a la producción a un nivel internacional.<br/><br/>Con raíces en el Tec de Monterrey y experiencia internacional en España, combino <strong>ingeniería de producto con visión creativa</strong> para crear diseños que cambian tu forma de ver el mundo.</p>
     <div class="skills-grid">
-      <div><div class="skill-name"><span>Modelado 3D</span><span>95%</span></div><div class="skill-track"><div class="skill-fill" data-width="95"></div></div></div>
-      <div><div class="skill-name"><span>Animación</span><span>88%</span></div><div class="skill-track"><div class="skill-fill" data-width="88"></div></div></div>
-      <div><div class="skill-name"><span>Motion Graphics</span><span>85%</span></div><div class="skill-track"><div class="skill-fill" data-width="85"></div></div></div>
-      <div><div class="skill-name"><span>Dirección creativa</span><span>92%</span></div><div class="skill-track"><div class="skill-fill" data-width="92"></div></div></div>
+      <div class="skill-name"><span>Modelado 3D</span></div>
+      <div class="skill-name"><span>Animación</span></div>
+      <div class="skill-name"><span>Motion Graphics</span></div>
+      <div class="skill-name"><span>Dirección creativa</span></div>
+      <div class="skill-name"><span>VFX & SFX</span></div>
+      <div class="skill-name"><span>Edición</span></div>
     </div>
     <div class="award-box"><div class="award-icon">★</div><div><div class="award-title">Ganador Nacional — Diseña México 2022</div><div class="award-sub">Diseño de Producto · Hardware Electrónico</div></div></div>
     <div class="award-box"><div class="award-icon">★</div><div><div class="award-title">Finalista — Alea Urban Ecopoint Modules 2021</div><div class="award-sub">Innovation open challenge by Desall, a platform with a community of more than 140 thousand designers and creatives.</div></div></div>
@@ -517,11 +522,11 @@
 
 <!-- SERVICES -->
 <section id="services">
-  <div class="sh-wrap reveal"><p class="sh-label">Lo que hago</p><h2 class="sh-title">SERVICIOS</h2></div>
+  <div class="sh-wrap reveal"><p class="sh-label">SERVICES</p><h2 class="sh-title">SERVICIOS</h2></div>
   <div class="services-grid reveal">
-    <div class="service-card"><div class="svc-num">01</div><span class="svc-icon">◈</span><h3 class="svc-name">MODELADO & RENDERS</h3><p class="svc-desc">Renders fotorrealistas de producto para e-commerce, catálogos y campañas.</p><ul class="svc-list"><li>Renders estáticos</li><li>Escenas lifestyle</li><li>Visualización de joyería</li></ul></div>
-    <div class="service-card"><div class="svc-num">02</div><span class="svc-icon">◉</span><h3 class="svc-name">ANIMACIÓN 3D</h3><p class="svc-desc">Animaciones de producto para redes sociales, presentaciones y lanzamientos.</p><ul class="svc-list"><li>Animación de producto</li><li>Motion graphics</li><li>Pack para redes sociales</li></ul></div>
-    <div class="service-card"><div class="svc-num">03</div><span class="svc-icon">◇</span><h3 class="svc-name">DIRECCIÓN CREATIVA</h3><p class="svc-desc">Supervisión y dirección de proyectos completos de diseño e identidad visual.</p><ul class="svc-list"><li>Brief y estrategia visual</li><li>Dirección de equipo externo</li><li>Consultoría de producto</li></ul></div>
+    <div class="service-card"><div class="svc-num">01</div><h3 class="svc-name">MODELADO & RENDERS</h3><p class="svc-desc">Renders fotorrealistas de producto para e-commerce, catálogos y campañas.</p><ul class="svc-list"><li>Renders estáticos</li><li>Escenas lifestyle</li><li>Visualización de producto</li></ul></div>
+    <div class="service-card"><div class="svc-num">02</div><h3 class="svc-name">ANIMACIÓN 3D</h3><p class="svc-desc">Animaciones de producto para redes sociales, presentaciones y lanzamientos.</p><ul class="svc-list"><li>Animación de producto</li><li>Motion graphics</li><li>Pack para redes sociales</li></ul></div>
+    <div class="service-card"><div class="svc-num">03</div><h3 class="svc-name">DIRECCIÓN CREATIVA</h3><p class="svc-desc">Supervisión y dirección de proyectos completos de diseño e identidad visual.</p><ul class="svc-list"><li>Brief y estrategia visual</li><li>Dirección de equipo externo</li><li>Consultoría de producto</li></ul></div>
   </div>
 </section>
 
@@ -532,19 +537,21 @@
     <div class="clients-fade clients-fade-left"></div>
     <div class="clients-fade clients-fade-right"></div>
     <div class="clients-track" id="clientsTrack">
-      <div class="client-logo-item"><div class="client-logo-box"><svg width="100" height="36" viewBox="0 0 100 36" fill="none"><rect x="2" y="8" width="20" height="20" rx="3" fill="none" stroke="currentColor" stroke-width="1.5"/><line x1="28" y1="18" x2="98" y2="18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="28" y1="12" x2="72" y2="12" stroke="currentColor" stroke-width="1" stroke-linecap="round"/><line x1="28" y1="24" x2="80" y2="24" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg></div><span class="client-logo-name">Maestros Joyeros</span></div>
-      <div class="client-logo-item"><div class="client-logo-box"><svg width="90" height="36" viewBox="0 0 90 36" fill="none"><circle cx="18" cy="18" r="14" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="18" cy="18" r="6" fill="currentColor" opacity=".3"/><text x="38" y="23" font-family="monospace" font-size="13" fill="currentColor" letter-spacing="1">SMART</text></svg></div><span class="client-logo-name">SMarTsol Tech</span></div>
-      <div class="client-logo-item"><div class="client-logo-box"><svg width="90" height="36" viewBox="0 0 90 36" fill="none"><polygon points="18,4 32,18 18,32 4,18" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="38" y="23" font-family="monospace" font-size="12" fill="currentColor" letter-spacing="0.5">MOA Est.</text></svg></div><span class="client-logo-name">MOA Estrategia</span></div>
-      <div class="client-logo-item"><div class="client-logo-box"><svg width="90" height="36" viewBox="0 0 90 36" fill="none"><rect x="2" y="6" width="24" height="24" rx="12" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="34" y="23" font-family="monospace" font-size="12" fill="currentColor" letter-spacing="0.5">EyeBuild</text></svg></div><span class="client-logo-name">EyeBuild</span></div>
-      <div class="client-logo-item"><div class="client-logo-box"><svg width="90" height="36" viewBox="0 0 90 36" fill="none"><path d="M4 28 L18 8 L32 28 Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><text x="38" y="23" font-family="monospace" font-size="11" fill="currentColor" letter-spacing="0.5">Beauty C.</text></svg></div><span class="client-logo-name">Beauty Creations</span></div>
-      <div class="client-logo-item"><div class="client-logo-box"><svg width="90" height="36" viewBox="0 0 90 36" fill="none"><path d="M18 4 C28 4 32 12 32 18 C32 24 28 32 18 32 C8 32 4 24 4 18 C4 12 8 4 18 4" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="34" y="23" font-family="monospace" font-size="11" fill="currentColor" letter-spacing="0.5">C&amp;A México</text></svg></div><span class="client-logo-name">C&A México</span></div>
+      <div class="client-logo-item"><div class="client-logo-box"><img src="assets/clients/maestros_joyeros_logo-removebg-preview.png" alt="Maestros Joyeros"/></div><span class="client-logo-name">Maestros Joyeros</span></div>
+      <div class="client-logo-item"><div class="client-logo-box"><img src="assets/clients/smartsol_logo.png" alt="SmartSol Technologies"/></div><span class="client-logo-name">SmartSol Technologies</span></div>
+      <div class="client-logo-item"><div class="client-logo-box"><img src="assets/clients/moa_estrategia_logo.jpg" alt="MOA Estrategia"/></div><span class="client-logo-name">MOA Estrategia</span></div>
+      <div class="client-logo-item"><div class="client-logo-box"><img src="assets/clients/eye_build_logo.png" alt="EyeBuild"/></div><span class="client-logo-name">EyeBuild</span></div>
+      <div class="client-logo-item"><div class="client-logo-box"><img src="assets/clients/Beauty_Creations_Logo.png" alt="Beauty Creations" style="height:60%;"/></div><span class="client-logo-name">Beauty Creations</span></div>
+      <div class="client-logo-item"><div class="client-logo-box"><img src="assets/clients/logo_ca.PNG" alt="C&amp;A México"/></div><span class="client-logo-name">C&A México</span></div>
+      <div class="client-logo-item"><div class="client-logo-box"><img src="assets/clients/Heineken-Logo.png" alt="Heineken"/></div><span class="client-logo-name">Heineken</span></div>
       <!-- Duplicado para loop -->
-      <div class="client-logo-item"><div class="client-logo-box"><svg width="100" height="36" viewBox="0 0 100 36" fill="none"><rect x="2" y="8" width="20" height="20" rx="3" fill="none" stroke="currentColor" stroke-width="1.5"/><line x1="28" y1="18" x2="98" y2="18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div><span class="client-logo-name">Maestros Joyeros</span></div>
-      <div class="client-logo-item"><div class="client-logo-box"><svg width="90" height="36" viewBox="0 0 90 36" fill="none"><circle cx="18" cy="18" r="14" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="18" cy="18" r="6" fill="currentColor" opacity=".3"/><text x="38" y="23" font-family="monospace" font-size="13" fill="currentColor" letter-spacing="1">SMART</text></svg></div><span class="client-logo-name">SMarTsol Tech</span></div>
-      <div class="client-logo-item"><div class="client-logo-box"><svg width="90" height="36" viewBox="0 0 90 36" fill="none"><polygon points="18,4 32,18 18,32 4,18" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="38" y="23" font-family="monospace" font-size="12" fill="currentColor" letter-spacing="0.5">MOA Est.</text></svg></div><span class="client-logo-name">MOA Estrategia</span></div>
-      <div class="client-logo-item"><div class="client-logo-box"><svg width="90" height="36" viewBox="0 0 90 36" fill="none"><rect x="2" y="6" width="24" height="24" rx="12" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="34" y="23" font-family="monospace" font-size="12" fill="currentColor" letter-spacing="0.5">EyeBuild</text></svg></div><span class="client-logo-name">EyeBuild</span></div>
-      <div class="client-logo-item"><div class="client-logo-box"><svg width="90" height="36" viewBox="0 0 90 36" fill="none"><path d="M4 28 L18 8 L32 28 Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><text x="38" y="23" font-family="monospace" font-size="11" fill="currentColor" letter-spacing="0.5">Beauty C.</text></svg></div><span class="client-logo-name">Beauty Creations</span></div>
-      <div class="client-logo-item"><div class="client-logo-box"><svg width="90" height="36" viewBox="0 0 90 36" fill="none"><path d="M18 4 C28 4 32 12 32 18 C32 24 28 32 18 32 C8 32 4 24 4 18 C4 12 8 4 18 4" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="34" y="23" font-family="monospace" font-size="11" fill="currentColor" letter-spacing="0.5">C&amp;A México</text></svg></div><span class="client-logo-name">C&A México</span></div>
+      <div class="client-logo-item"><div class="client-logo-box"><img src="assets/clients/maestros_joyeros_logo-removebg-preview.png" alt="Maestros Joyeros"/></div><span class="client-logo-name">Maestros Joyeros</span></div>
+      <div class="client-logo-item"><div class="client-logo-box"><img src="assets/clients/smartsol_logo.png" alt="SmartSol Technologies"/></div><span class="client-logo-name">SmartSol Technologies</span></div>
+      <div class="client-logo-item"><div class="client-logo-box"><img src="assets/clients/moa_estrategia_logo.jpg" alt="MOA Estrategia"/></div><span class="client-logo-name">MOA Estrategia</span></div>
+      <div class="client-logo-item"><div class="client-logo-box"><img src="assets/clients/eye_build_logo.png" alt="EyeBuild"/></div><span class="client-logo-name">EyeBuild</span></div>
+      <div class="client-logo-item"><div class="client-logo-box"><img src="assets/clients/Beauty_Creations_Logo.png" alt="Beauty Creations" style="height:60%;"/></div><span class="client-logo-name">Beauty Creations</span></div>
+      <div class="client-logo-item"><div class="client-logo-box"><img src="assets/clients/logo_ca.PNG" alt="C&amp;A México"/></div><span class="client-logo-name">C&A México</span></div>
+      <div class="client-logo-item"><div class="client-logo-box"><img src="assets/clients/Heineken-Logo.png" alt="Heineken"/></div><span class="client-logo-name">Heineken</span></div>
     </div>
   </div>
 </div>

@@ -17,7 +17,8 @@
 .proj-subtitle{font-size:14px;color:var(--muted2);line-height:1.7;max-width:520px;border-left:1px solid var(--gold);padding-left:16px;}
 .proj-year{font-family:var(--font-mono);font-size:9px;letter-spacing:.2em;color:var(--muted);text-transform:uppercase;position:absolute;bottom:80px;right:64px;}
 .video-section{padding:80px 48px;border-bottom:1px solid var(--gray);}
-.video-wrap{position:relative;background:#060b10;border:1px solid var(--gray);overflow:hidden;max-width:480px;margin:0 auto;}
+.video-row{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;}
+.video-wrap{position:relative;background:#060b10;border:1px solid var(--gray);overflow:hidden;max-width:380px;width:100%;margin:0 auto;}
 .video-wrap video{width:100%;display:block;aspect-ratio:9/16;object-fit:cover;}
 .details-section{padding:80px 48px;display:grid;grid-template-columns:1fr 1.4fr;gap:80px;border-bottom:1px solid var(--gray);}
 .spec-label{font-family:var(--font-mono);font-size:9px;letter-spacing:.25em;color:var(--gold);text-transform:uppercase;margin-bottom:32px;}
@@ -77,8 +78,13 @@
 </section>
 
 <section class="video-section reveal">
-  <div class="video-wrap">
-    <video src="../Freelance/EyeBuild.MP4" controls playsinline></video>
+  <div class="video-row">
+    <div class="video-wrap">
+      <video src="../Freelance/EyeBuild.MP4" controls playsinline></video>
+    </div>
+    <div class="video-wrap">
+      <video src="../Freelance/EyeBuild 2.mp4" controls playsinline></video>
+    </div>
   </div>
 </section>
 
@@ -99,6 +105,7 @@
       <p>Comercial 3D completo para EyeBuild, empresa especializada en cámaras de seguridad para sitios de construcción. El proyecto incluyó el modelado y animación 3D del producto principal, ambientación completa de una obra en construcción con personajes y maquinaria.</p>
       <p>La producción cubrió todas las etapas del proceso: brief y estrategia visual, modelado 3D del producto, construcción del ambiente, animación de cámara, iluminación fotorrealista, edición de video y sound design final.</p>
       <p>El formato vertical fue optimizado para Instagram, con ritmo visual dinámico pensado para capturar la atención en los primeros 3 segundos de reproducción.</p>
+      <p>Puedes encontrar los resultados de este trabajo aquí: <a href="https://www.eyebuild.us/" target="_blank" rel="noopener noreferrer" style="color:var(--gold);text-decoration:underline;">eyebuild.us</a></p>
     </div>
   </div>
 </section>
