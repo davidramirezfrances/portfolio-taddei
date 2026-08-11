@@ -3,7 +3,7 @@
    Shared across all pages
 ───────────────────────────────────────── */
 
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Space+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Space+Mono:wght@400;700&family=Source+Sans+Pro:wght@900&display=swap');
 
 :root {
   --black: #080808;
@@ -14,7 +14,7 @@
   --gray: #1E1E1E;
   --gray-mid: #444;
   --gray-light: #777;
-  --muted: rgba(240,237,232,0.4);
+  --muted: rgba(240,237,232,0.62);
   --muted2: rgba(240,237,232,0.65);
   --font-display: 'Bebas Neue', sans-serif;
   --font-body: 'DM Sans', sans-serif;
@@ -43,9 +43,9 @@ nav::after{content:'';position:absolute;inset:0;background:linear-gradient(to bo
 .nav-logo{font-family:var(--font-mono);font-size:11px;letter-spacing:.2em;color:var(--gold);text-decoration:none;text-transform:uppercase;display:flex;align-items:center;gap:10px;}
 .nav-logo-img{height:56px;width:auto;object-fit:contain;filter:brightness(0) invert(1);}
 .nav-links{display:flex;gap:36px;list-style:none;}
-.nav-links a{font-family:var(--font-mono);font-size:10px;letter-spacing:.15em;color:var(--muted);text-decoration:none;text-transform:uppercase;transition:color .3s;}
+.nav-links a{font-family:var(--font-mono);font-weight:700;font-size:10px;letter-spacing:.15em;color:var(--white);text-decoration:none;text-transform:uppercase;transition:color .3s;}
 .nav-links a:hover{color:var(--white);}
-.nav-cta{font-family:var(--font-mono);font-size:10px;letter-spacing:.15em;color:var(--black);background:var(--gold);padding:9px 18px;text-decoration:none;text-transform:uppercase;transition:background .3s;}
+.nav-cta{font-family:var(--font-mono);font-size:10px;letter-spacing:.15em;color:var(--black);background:var(--gold);padding:9px 18px;text-decoration:none;text-transform:uppercase;transition:background .3s;border-radius:4px;}
 .nav-cta:hover{background:var(--white);}
 
 /* ── FOOTER ── */
@@ -60,11 +60,11 @@ footer{border-top:1px solid var(--gray);padding:36px 48px;display:flex;align-ite
 .reveal.visible{opacity:1;transform:translateY(0);}
 
 /* ── SHARED BUTTONS ── */
-.btn-primary{display:inline-block;background:var(--gold);color:var(--black);font-family:var(--font-mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;padding:16px 32px;transition:background .3s,transform .2s;white-space:nowrap;}
+.btn-primary{display:inline-block;background:var(--gold);color:var(--black);font-family:var(--font-mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;padding:16px 32px;transition:background .3s,transform .2s;white-space:nowrap;border-radius:4px;}
 .btn-primary:hover{background:var(--white);transform:translateX(-4px);}
 .btn-secondary{display:inline-block;color:var(--muted);font-family:var(--font-mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid var(--gray-mid);padding-bottom:2px;transition:color .3s,border-color .3s;white-space:nowrap;}
 .btn-secondary:hover{color:var(--white);border-color:var(--white);}
-.btn-ver-mas{display:inline-flex;align-items:center;gap:10px;font-family:var(--font-mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--white);text-decoration:none;border:1px solid var(--gray-mid);padding:12px 22px;transition:border-color .3s,color .3s,background .3s;}
+.btn-ver-mas{display:inline-flex;align-items:center;gap:10px;font-family:var(--font-mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--white);text-decoration:none;border:1px solid var(--gray-mid);padding:12px 22px;transition:border-color .3s,color .3s,background .3s;border-radius:4px;}
 .btn-ver-mas:hover{border-color:var(--gold);color:var(--gold);}
 .btn-ver-mas svg{transition:transform .3s;}
 .btn-ver-mas:hover svg{transform:translateX(4px);}

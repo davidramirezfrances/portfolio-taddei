@@ -17,8 +17,10 @@
 .proj-subtitle{font-size:14px;color:var(--muted2);line-height:1.7;max-width:520px;border-left:1px solid var(--gold);padding-left:16px;}
 .proj-year{font-family:var(--font-mono);font-size:9px;letter-spacing:.2em;color:var(--muted);text-transform:uppercase;position:absolute;bottom:80px;right:64px;}
 .video-section{padding:80px 48px;border-bottom:1px solid var(--gray);}
-.video-wrap{position:relative;background:#10060e;border:1px solid var(--gray);overflow:hidden;max-width:480px;margin:0 auto;}
-.video-wrap video{width:100%;display:block;aspect-ratio:9/16;object-fit:cover;}
+.video-row{display:flex;gap:24px;justify-content:center;align-items:center;flex-wrap:wrap;}
+.video-wrap{position:relative;background:#10060e;border:1px solid var(--gray);overflow:hidden;max-width:340px;width:100%;margin:0 auto;}
+.video-wrap video,.video-wrap img{width:100%;display:block;aspect-ratio:9/16;object-fit:cover;}
+.side-img{max-width:260px;}
 .details-section{padding:80px 48px;display:grid;grid-template-columns:1fr 1.4fr;gap:80px;border-bottom:1px solid var(--gray);}
 .spec-label{font-family:var(--font-mono);font-size:9px;letter-spacing:.25em;color:var(--gold);text-transform:uppercase;margin-bottom:32px;}
 .spec-item{border-top:1px solid var(--gray);padding:16px 0;display:flex;justify-content:space-between;align-items:baseline;}
@@ -31,7 +33,7 @@
 .next-section{padding:80px 48px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--gray);}
 .next-label{font-family:var(--font-mono);font-size:9px;letter-spacing:.25em;color:var(--muted);text-transform:uppercase;margin-bottom:12px;}
 .next-title{font-family:var(--font-display);font-size:clamp(32px,4vw,60px);line-height:1;}
-.next-link{display:inline-flex;align-items:center;gap:12px;font-family:var(--font-mono);font-size:10px;letter-spacing:.2em;color:var(--black);background:var(--gold);padding:14px 28px;text-decoration:none;text-transform:uppercase;transition:background .3s;margin-top:24px;white-space:nowrap;}
+.next-link{display:inline-flex;align-items:center;gap:12px;font-family:var(--font-mono);font-size:10px;letter-spacing:.2em;color:var(--black);background:var(--gold);padding:14px 28px;text-decoration:none;text-transform:uppercase;transition:background .3s;margin-top:24px;white-space:nowrap;border-radius:4px;}
 .next-link:hover{background:var(--white);}
 .back-home{font-family:var(--font-mono);font-size:9px;letter-spacing:.2em;color:var(--muted);text-decoration:none;text-transform:uppercase;border-bottom:1px solid var(--gray-mid);padding-bottom:2px;transition:color .3s,border-color .3s;}
 .back-home:hover{color:var(--gold);border-color:var(--gold);}
@@ -68,17 +70,25 @@
     <div class="proj-meta">
       <span class="proj-tag gold">Freelance — Beauty Creations</span>
       <span class="proj-tag">Motion Graphics + 3D</span>
-      <span class="proj-tag">2023</span>
+      <span class="proj-tag">2025</span>
     </div>
     <h1 class="proj-title">PALETAS<br/>DUET</h1>
     <p class="proj-subtitle">Animación de lanzamiento para las paletas de maquillaje DUET. Modelado 3D con texturas fotorrealistas y movimientos fluidos de motion graphics para Instagram.</p>
   </div>
-  <span class="proj-year">Beauty Creations — 2023</span>
+  <span class="proj-year">Beauty Creations — 2025</span>
 </section>
 
 <section class="video-section reveal">
-  <div class="video-wrap">
-    <video src="../Freelance/Beauty Creations.mp4" controls playsinline></video>
+  <div class="video-row">
+    <div class="video-wrap side-img">
+      <img src="../Freelance/duet1.png" alt="Beauty Creations DUET — paletas abiertas"/>
+    </div>
+    <div class="video-wrap">
+      <video src="../Freelance/Beauty Creations.mp4" controls playsinline></video>
+    </div>
+    <div class="video-wrap side-img">
+      <img src="../Freelance/duet2.png" alt="Beauty Creations DUET — paletas apiladas"/>
+    </div>
   </div>
 </section>
 
@@ -87,11 +97,11 @@
     <p class="spec-label">Especificaciones</p>
     <div class="spec-item"><span class="spec-key">Cliente</span><span class="spec-val">Beauty Creations</span></div>
     <div class="spec-item"><span class="spec-key">Producto</span><span class="spec-val">Paletas DUET</span></div>
-    <div class="spec-item"><span class="spec-key">Tipo</span><span class="spec-val">Motion — Instagram</span></div>
-    <div class="spec-item"><span class="spec-key">Técnica</span><span class="spec-val">Modelado 3D + Motion Graphics</span></div>
+    <div class="spec-item"><span class="spec-key">Tipo</span><span class="spec-val">Motion Graphics</span></div>
+    <div class="spec-item"><span class="spec-key">Técnica</span><span class="spec-val">Modelado 3D + Animación 3D</span></div>
     <div class="spec-item"><span class="spec-key">Formato</span><span class="spec-val">Vertical 9:16</span></div>
     <div class="spec-item"><span class="spec-key">Software</span><span class="spec-val">Blender 3D + Premiere Pro</span></div>
-    <div class="spec-item"><span class="spec-key">Año</span><span class="spec-val">2023</span></div>
+    <div class="spec-item"><span class="spec-key">Año</span><span class="spec-val">2025</span></div>
   </div>
   <div class="details-copy">
     <p class="copy-tag">El proceso</p>

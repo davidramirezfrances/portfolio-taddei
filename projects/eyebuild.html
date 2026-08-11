@@ -20,6 +20,7 @@
 .video-row{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;}
 .video-wrap{position:relative;background:#060b10;border:1px solid var(--gray);overflow:hidden;max-width:380px;width:100%;margin:0 auto;}
 .video-wrap video{width:100%;display:block;aspect-ratio:9/16;object-fit:cover;}
+.video-caption{font-family:var(--font-mono);font-size:10px;letter-spacing:.2em;color:var(--muted);text-transform:uppercase;text-align:left;margin-top:6px;}
 .details-section{padding:80px 48px;display:grid;grid-template-columns:1fr 1.4fr;gap:80px;border-bottom:1px solid var(--gray);}
 .spec-label{font-family:var(--font-mono);font-size:9px;letter-spacing:.25em;color:var(--gold);text-transform:uppercase;margin-bottom:32px;}
 .spec-item{border-top:1px solid var(--gray);padding:16px 0;display:flex;justify-content:space-between;align-items:baseline;}
@@ -32,7 +33,7 @@
 .next-section{padding:80px 48px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--gray);}
 .next-label{font-family:var(--font-mono);font-size:9px;letter-spacing:.25em;color:var(--muted);text-transform:uppercase;margin-bottom:12px;}
 .next-title{font-family:var(--font-display);font-size:clamp(32px,4vw,60px);line-height:1;}
-.next-link{display:inline-flex;align-items:center;gap:12px;font-family:var(--font-mono);font-size:10px;letter-spacing:.2em;color:var(--black);background:var(--gold);padding:14px 28px;text-decoration:none;text-transform:uppercase;transition:background .3s;margin-top:24px;white-space:nowrap;}
+.next-link{display:inline-flex;align-items:center;gap:12px;font-family:var(--font-mono);font-size:10px;letter-spacing:.2em;color:var(--black);background:var(--gold);padding:14px 28px;text-decoration:none;text-transform:uppercase;transition:background .3s;margin-top:24px;white-space:nowrap;border-radius:4px;}
 .next-link:hover{background:var(--white);}
 .back-home{font-family:var(--font-mono);font-size:9px;letter-spacing:.2em;color:var(--muted);text-decoration:none;text-transform:uppercase;border-bottom:1px solid var(--gray-mid);padding-bottom:2px;transition:color .3s,border-color .3s;}
 .back-home:hover{color:var(--gold);border-color:var(--gold);}
@@ -79,11 +80,17 @@
 
 <section class="video-section reveal">
   <div class="video-row">
-    <div class="video-wrap">
-      <video src="../Freelance/EyeBuild.MP4" controls playsinline></video>
+    <div>
+      <div class="video-wrap">
+        <video src="../Freelance/EyeBuild.MP4" controls playsinline></video>
+      </div>
+      <p class="video-caption">ADD #1</p>
     </div>
-    <div class="video-wrap">
-      <video src="../Freelance/EyeBuild 2.mp4" controls playsinline></video>
+    <div>
+      <div class="video-wrap">
+        <video src="../Freelance/Camara II.mp4" controls playsinline></video>
+      </div>
+      <p class="video-caption">ADD #2</p>
     </div>
   </div>
 </section>

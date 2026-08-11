@@ -8,15 +8,15 @@
 <style>
 /* ── HERO ── */
 #hero{min-height:100vh;display:flex;align-items:center;padding:0 64px;position:relative;overflow:hidden;}
-.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 80% at 75% 50%, rgba(201,169,110,.09) 0%, transparent 65%),radial-gradient(ellipse 40% 50% at 30% 50%, rgba(201,169,110,.04) 0%, transparent 60%);}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 80% at 75% 50%, rgba(240,237,232,.09) 0%, transparent 65%),radial-gradient(ellipse 40% 50% at 30% 50%, rgba(240,237,232,.04) 0%, transparent 60%);}
 .hero-model-placeholder{position:absolute;right:-8%;top:50%;transform:translateY(-50%);width:68%;height:110%;display:flex;align-items:center;justify-content:center;pointer-events:none;}
 .hero-model-img{width:100%;height:100%;object-fit:contain;object-position:center;display:block;filter:drop-shadow(0 0 120px rgba(201,169,110,.14)) drop-shadow(0 0 40px rgba(201,169,110,.08));}
 .hero-content{position:relative;z-index:2;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;max-width:42%;gap:0;}
 .hero-title-block{margin-bottom:28px;}
-.hero-eyebrow{font-family:var(--font-mono);font-size:10px;letter-spacing:.3em;color:var(--gold);text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;gap:10px;opacity:0;animation:fadeUp .8s .3s forwards;}
+.hero-eyebrow{font-family:var(--font-mono);font-size:10px;font-weight:700;letter-spacing:.3em;color:var(--gold);text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;gap:10px;opacity:0;animation:fadeUp .8s .3s forwards;}
 .hero-eyebrow::before{content:'[';color:var(--muted);}
 .hero-eyebrow::after{content:']';color:var(--muted);}
-.hero-title{font-family:var(--font-display);font-size:clamp(72px,10vw,160px);line-height:.88;letter-spacing:-.01em;}
+.hero-title{font-family:var(--font-display);font-size:clamp(72px,10vw,160px);line-height:.88;letter-spacing:.02em;}
 .hero-title .line{display:block;overflow:hidden;}
 .hero-title .line span{display:block;opacity:0;transform:translateY(100%);animation:slideUp .9s var(--ease) forwards;}
 .hero-title .line:nth-child(1) span{animation-delay:.4s;}
@@ -26,9 +26,9 @@
 .hero-desc-block{display:flex;flex-direction:column;align-items:flex-start;gap:20px;opacity:0;animation:fadeUp .9s .85s forwards;}
 .hero-desc-text{font-size:14px;color:var(--muted2);line-height:1.75;max-width:320px;border-left:1px solid var(--gold);padding-left:16px;}
 .hero-cta-row{display:flex;gap:14px;align-items:center;margin-top:4px;}
-.hero-btn-primary{font-family:var(--font-mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--black);background:var(--gold);padding:13px 24px;text-decoration:none;transition:background .3s;display:flex;align-items:center;gap:8px;white-space:nowrap;}
+.hero-btn-primary{font-family:var(--font-mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--black);background:var(--gold);padding:13px 24px;text-decoration:none;transition:background .3s;display:flex;align-items:center;gap:8px;white-space:nowrap;border-radius:4px;}
 .hero-btn-primary:hover{background:var(--white);}
-.hero-btn-secondary{font-family:var(--font-mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);text-decoration:none;border:1px solid var(--gray-mid);padding:13px 24px;transition:color .3s,border-color .3s;}
+.hero-btn-secondary{font-family:var(--font-mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);text-decoration:none;border:1px solid var(--gray-mid);padding:13px 24px;transition:color .3s,border-color .3s;border-radius:4px;}
 .hero-btn-secondary:hover{color:var(--white);border-color:var(--white);}
 .hero-bottom-bar{position:absolute;bottom:32px;left:64px;right:64px;display:flex;justify-content:space-between;align-items:center;opacity:0;animation:fadeUp .8s 1.2s forwards;}
 .hbb-scroll{font-family:var(--font-mono);font-size:9px;letter-spacing:.2em;color:var(--muted);text-transform:uppercase;display:flex;align-items:center;gap:8px;}
@@ -264,7 +264,7 @@
 <section id="hero">
   <div class="hero-bg"></div>
   <div class="hero-model-placeholder">
-    <img src="Portada yo.JPG" alt="3D Model" class="hero-model-img"/>
+    <img src="foto retrato noise.png" alt="3D Model" class="hero-model-img"/>
   </div>
   <div class="hero-content">
     <div class="hero-title-block">
@@ -300,9 +300,6 @@
     <div class="wsh-left">
       <p class="wsh-tag">Maestros Joyeros</p>
       <h2 class="wsh-title">JOYERÍA DE ÉLITE</h2>
-    </div>
-    <div class="wsh-right">
-      <span class="wsh-count">3 proyectos destacados</span>
     </div>
   </div>
 
@@ -395,9 +392,6 @@
       <p class="wsh-tag">Client Work</p>
       <h2 class="wsh-title">PROYECTOS FREELANCE</h2>
     </div>
-    <div class="wsh-right">
-      <span class="wsh-count">3 casos de estudio</span>
-    </div>
   </div>
 
   <div class="client-list reveal">
@@ -458,9 +452,6 @@
       <p class="wsh-tag">Personal Projects & Social Media</p>
       <h2 class="wsh-title">Proyectos Personales & Redes Sociales</h2>
     </div>
-    <div class="wsh-right">
-      <span class="wsh-count">14 piezas seleccionadas</span>
-    </div>
   </div>
 
   <div class="masonry-grid reveal">
@@ -503,7 +494,7 @@
   <div class="reveal">
     <div class="about-img-frame"><img src="Portada yo.JPG" style="width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block;"/><div class="about-img-label">Zapopan, Jalisco — MX</div></div>
   </div>
-  <div class="reveal">
+  <div class="reveal" style="display:flex;flex-direction:column;">
     <p class="about-eyebrow">About</p>
     <h2 class="about-headline">DISEÑADOR.<br/>CREADOR.<br/>LÍDER.</h2>
     <p class="about-body">Soy Ernesto Taddei, actual <strong>Jefe de Diseño 3D en Maestros Joyeros</strong>, donde dirijo un equipo de más de 10 diseñadores y llevo proyectos desde la idea a la producción a un nivel internacional.<br/><br/>Con raíces en el Tec de Monterrey y experiencia internacional en España, combino <strong>ingeniería de producto con visión creativa</strong> para crear diseños que cambian tu forma de ver el mundo.</p>
@@ -513,10 +504,13 @@
       <div class="skill-name"><span>Motion Graphics</span></div>
       <div class="skill-name"><span>Dirección creativa</span></div>
       <div class="skill-name"><span>VFX & SFX</span></div>
-      <div class="skill-name"><span>Edición</span></div>
+      <div class="skill-name"><span>Implementación de IA</span></div>
+      <div class="skill-name"><span>Diseño de Procesos</span></div>
+      <div class="skill-name"><span>Prototipado</span></div>
     </div>
     <div class="award-box"><div class="award-icon">★</div><div><div class="award-title">Ganador Nacional — Diseña México 2022</div><div class="award-sub">Diseño de Producto · Hardware Electrónico</div></div></div>
     <div class="award-box"><div class="award-icon">★</div><div><div class="award-title">Finalista — Alea Urban Ecopoint Modules 2021</div><div class="award-sub">Innovation open challenge by Desall, a platform with a community of more than 140 thousand designers and creatives.</div></div></div>
+    <p style="font-style:italic;text-align:center;color:var(--muted);margin-top:auto;margin-bottom:auto;padding-top:24px;">"La grandeza viene de pequeños comienzos."</p>
   </div>
 </section>
 
