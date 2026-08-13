@@ -3,6 +3,22 @@
 // Shared across all pages
 // ─────────────────────────────────────────
 
+// ── Mobile nav toggle ──
+const navToggle = document.querySelector('.nav-toggle');
+const navLinksEl = document.querySelector('.nav-links');
+if(navToggle && navLinksEl){
+  navToggle.addEventListener('click', ()=>{
+    navToggle.classList.toggle('active');
+    navLinksEl.classList.toggle('open');
+  });
+  navLinksEl.querySelectorAll('a').forEach(link=>{
+    link.addEventListener('click', ()=>{
+      navToggle.classList.remove('active');
+      navLinksEl.classList.remove('open');
+    });
+  });
+}
+
 // ── Cursor ──
 const cursor = document.getElementById('cursor');
 const ring   = document.getElementById('cursorRing');

@@ -47,6 +47,11 @@ nav::after{content:'';position:absolute;inset:0;background:linear-gradient(to bo
 .nav-links a:hover{color:var(--white);}
 .nav-cta{font-family:var(--font-mono);font-size:10px;letter-spacing:.15em;color:var(--black);background:var(--gold);padding:9px 18px;text-decoration:none;text-transform:uppercase;transition:background .3s;border-radius:4px;}
 .nav-cta:hover{background:var(--white);}
+.nav-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:28px;height:28px;background:none;border:none;cursor:pointer;padding:0;margin-left:auto;z-index:110;}
+.nav-toggle span{display:block;width:100%;height:2px;background:var(--white);transition:transform .3s,opacity .3s;}
+.nav-toggle.active span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav-toggle.active span:nth-child(2){opacity:0;}
+.nav-toggle.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
 
 /* ── FOOTER ── */
 footer{border-top:1px solid var(--gray);padding:36px 48px;display:flex;align-items:center;justify-content:space-between;}
@@ -92,8 +97,15 @@ footer{border-top:1px solid var(--gray);padding:36px 48px;display:flex;align-ite
 
 /* ── MOBILE ── */
 @media (max-width: 768px) {
-  nav { padding: 18px 24px; }
+  nav { display: grid; grid-template-columns: 1fr 1fr 1fr; align-items: center; padding: 18px 24px; gap: 12px; }
+  .nav-logo-img { height: 51px; }
+  .nav-logo { order: 2; justify-self: center; }
   .nav-links { display: none; }
+  .nav-toggle { display: flex; order: 3; justify-self: center; flex-shrink: 0; margin-left: 0; }
+  .nav-cta { order: 1; justify-self: center; flex-shrink: 0; margin-left: 0; padding: 7px 14px; font-size: 9px; }
+  .nav-links.open { display: flex; flex-direction: column; position: fixed; top: 87px; left: 0; right: 0; bottom: 0; background: var(--black); padding: 24px 32px 40px; gap: 4px; z-index: 99; overflow-y: auto; }
+  .nav-links.open li { border-bottom: 1px solid var(--gray); }
+  .nav-links.open a { display: block; padding: 16px 0; font-size: 14px; }
 
   footer { flex-direction: column; gap: 16px; text-align: center; padding: 32px 24px; }
   .footer-socials { justify-content: center; }
