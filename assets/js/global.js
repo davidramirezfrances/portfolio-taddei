@@ -20,11 +20,10 @@ if(navToggle && navLinksEl){
 }
 
 // ── Lazy-load background videos (only fetch/play once visible) — desktop only ──
+// Mobile keeps the native autoplay attribute untouched (more reliable there).
 const lazyVideos = document.querySelectorAll('video[data-lazy-autoplay]');
-if(lazyVideos.length){
-  if(window.matchMedia('(max-width: 768px)').matches){
-    lazyVideos.forEach(v=>{ v.play().catch(()=>{}); });
-  } else {
+if(lazyVideos.length && !window.matchMedia('(max-width: 768px)').matches){
+    lazyVideos.forEach(v=>v.pause());
     const videoObs = new IntersectionObserver(entries=>{
       entries.forEach(entry=>{
         const v = entry.target;
@@ -36,7 +35,6 @@ if(lazyVideos.length){
       });
     },{threshold:.15});
     lazyVideos.forEach(v=>videoObs.observe(v));
-  }
 }
 
 // ── Cursor ──
