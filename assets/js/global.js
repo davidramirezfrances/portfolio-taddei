@@ -19,6 +19,22 @@ if(navToggle && navLinksEl){
   });
 }
 
+// ── Lazy-load background videos (only fetch/play once visible) ──
+const lazyVideos = document.querySelectorAll('video[data-lazy-autoplay]');
+if(lazyVideos.length){
+  const videoObs = new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      const v = entry.target;
+      if(entry.isIntersecting){
+        v.play().catch(()=>{});
+      } else {
+        v.pause();
+      }
+    });
+  },{threshold:.15});
+  lazyVideos.forEach(v=>videoObs.observe(v));
+}
+
 // ── Cursor ──
 const cursor = document.getElementById('cursor');
 const ring   = document.getElementById('cursorRing');
