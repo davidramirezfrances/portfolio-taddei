@@ -19,20 +19,24 @@ if(navToggle && navLinksEl){
   });
 }
 
-// ── Lazy-load background videos (only fetch/play once visible) ──
+// ── Lazy-load background videos (only fetch/play once visible) — desktop only ──
 const lazyVideos = document.querySelectorAll('video[data-lazy-autoplay]');
 if(lazyVideos.length){
-  const videoObs = new IntersectionObserver(entries=>{
-    entries.forEach(entry=>{
-      const v = entry.target;
-      if(entry.isIntersecting){
-        v.play().catch(()=>{});
-      } else {
-        v.pause();
-      }
-    });
-  },{threshold:.15});
-  lazyVideos.forEach(v=>videoObs.observe(v));
+  if(window.matchMedia('(max-width: 768px)').matches){
+    lazyVideos.forEach(v=>{ v.play().catch(()=>{}); });
+  } else {
+    const videoObs = new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        const v = entry.target;
+        if(entry.isIntersecting){
+          v.play().catch(()=>{});
+        } else {
+          v.pause();
+        }
+      });
+    },{threshold:.15});
+    lazyVideos.forEach(v=>videoObs.observe(v));
+  }
 }
 
 // ── Cursor ──
